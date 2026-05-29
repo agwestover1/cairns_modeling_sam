@@ -1,0 +1,137 @@
+{
+  "_generated": "scripts/analyze_fitness.py",
+  "_basis": "Recent training files drive current fitness; 2025 race excluded from the fitness curve (draft-aided, lower fitness).",
+  "per_file": {
+    "2025_cairns_race": {
+      "samples_s": 16014,
+      "avg_power_w": 282.6,
+      "normalized_power_w": 290.2,
+      "variability_index": 1.027,
+      "mean_max_w": {
+        "5s": 711.8,
+        "15s": 522.6,
+        "30s": 439.1,
+        "60s": 418.1,
+        "300s": 338.5,
+        "600s": 328.0,
+        "1200s": 313.1,
+        "1800s": 311.0,
+        "3600s": 305.1,
+        "7200s": 298.2,
+        "14400s": 285.0
+      },
+      "is_race": true
+    },
+    "2026-04-19_5hr_aerobic": {
+      "samples_s": 18168,
+      "avg_power_w": 288.6,
+      "normalized_power_w": 306.7,
+      "variability_index": 1.063,
+      "mean_max_w": {
+        "5s": 590.2,
+        "15s": 562.9,
+        "30s": 460.9,
+        "60s": 429.2,
+        "300s": 402.4,
+        "600s": 392.2,
+        "1200s": 381.9,
+        "1800s": 367.8,
+        "3600s": 337.0,
+        "7200s": 311.7,
+        "14400s": 293.2
+      },
+      "is_race": false
+    },
+    "2026-04-26_4x10_lt2_indoor": {
+      "samples_s": 10815,
+      "avg_power_w": 287.0,
+      "normalized_power_w": 306.3,
+      "variability_index": 1.067,
+      "mean_max_w": {
+        "5s": 461.8,
+        "15s": 451.1,
+        "30s": 447.1,
+        "60s": 428.7,
+        "300s": 400.7,
+        "600s": 391.8,
+        "1200s": 363.5,
+        "1800s": 349.3,
+        "3600s": 334.4,
+        "7200s": 302.3,
+        "14400s": null
+      },
+      "is_race": false
+    },
+    "2026-05-16_recovery_indoor": {
+      "samples_s": 3773,
+      "avg_power_w": 231.6,
+      "normalized_power_w": 232.4,
+      "variability_index": 1.003,
+      "mean_max_w": {
+        "5s": 293.6,
+        "15s": 269.3,
+        "30s": 261.2,
+        "60s": 249.9,
+        "300s": 243.8,
+        "600s": 241.5,
+        "1200s": 237.3,
+        "1800s": 234.6,
+        "3600s": 232.3,
+        "7200s": null,
+        "14400s": null
+      },
+      "is_race": false
+    },
+    "2026-05-23_6hr_ride": {
+      "samples_s": 21657,
+      "avg_power_w": 275.6,
+      "normalized_power_w": 291.3,
+      "variability_index": 1.057,
+      "mean_max_w": {
+        "5s": 608.0,
+        "15s": 516.9,
+        "30s": 487.0,
+        "60s": 479.2,
+        "300s": 389.5,
+        "600s": 345.3,
+        "1200s": 330.2,
+        "1800s": 328.3,
+        "3600s": 316.1,
+        "7200s": 293.5,
+        "14400s": 282.2
+      },
+      "is_race": false
+    }
+  },
+  "recent_training_mean_max_w": {
+    "5s": 608.0,
+    "15s": 562.9,
+    "30s": 487.0,
+    "60s": 479.2,
+    "300s": 402.4,
+    "600s": 392.2,
+    "1200s": 381.9,
+    "1800s": 367.8,
+    "3600s": 337.0,
+    "7200s": 311.7,
+    "14400s": 293.2
+  },
+  "ftp": {
+    "estimate_w": 376,
+    "band_w": [
+      363,
+      388
+    ],
+    "method": "0.95*best-20min (fatigued, in 5h ride) to ~10min repeatable proxy; best-20min=382W set during the Apr19 KOM effort."
+  },
+  "ironman_bike_target_np_w": {
+    "conservative_IF_0.72": 271,
+    "target_IF_0.76": 286,
+    "aggressive_IF_0.78": 293
+  },
+  "durability_notes": {
+    "np_5h_w": 306.7,
+    "np_6h_w": 291.3,
+    "comment": "Sustained 5-6h normalized powers far exceed any plausible IM target, confirming durability is not the limiter \u2014 pacing discipline (to protect the run) is."
+  }
+}

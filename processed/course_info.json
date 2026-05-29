@@ -1,0 +1,199 @@
+{
+  "race_name": "2026 IRONMAN Cairns",
+  "race_date": "2026-06-14",
+  "host_location": "Palm Cove \u2192 Port Douglas \u2192 Cairns CBD",
+  "swim": {
+    "distance_km": 3.8,
+    "laps": 2,
+    "venue": "Palm Cove, Williams Esplanade",
+    "direction": "anti-clockwise",
+    "cutoff_h": 2.333,
+    "cutoff_label": "2h 20m from individual swim start"
+  },
+  "bike": {
+    "distance_km": 180.0,
+    "laps": 2,
+    "course": "Palm Cove \u2192 Captain Cook Highway \u2192 Rex Lookout \u2192 Craiglie (Trezise Rd / Spring Creek Rd) \u2192 return \u2192 Yorkeys Knob \u2192 Cairns CBD",
+    "cutoff_h": 10.0,
+    "cutoff_label": "10h cumulative from swim start",
+    "aid_stations": [
+      {
+        "name": "B1 \u2014 Wangetti Road",
+        "km_marks": [
+          18.0,
+          91.0
+        ],
+        "primary_km": 18.0,
+        "lat": -16.6504579,
+        "lng": 145.565401,
+        "alt": 38.8
+      },
+      {
+        "name": "B2 \u2014 Mowbray River Rd",
+        "km_marks": [
+          41.2,
+          110.5
+        ],
+        "primary_km": 41.2,
+        "lat": -16.5396125,
+        "lng": 145.4700283,
+        "alt": 9.5
+      },
+      {
+        "name": "B3 \u2014 Thala Beach",
+        "km_marks": [
+          49.6,
+          123.9
+        ],
+        "primary_km": 49.6,
+        "lat": -16.5923231,
+        "lng": 145.5150798,
+        "alt": 21.1
+      },
+      {
+        "name": "B4 \u2014 Ellis Beach",
+        "km_marks": [
+          71.9,
+          146.2
+        ],
+        "primary_km": 71.9,
+        "lat": -16.72222,
+        "lng": 145.64244,
+        "alt": 13.1
+      },
+      {
+        "name": "B5 \u2014 Smithfield Village",
+        "km_marks": [
+          160.0
+        ],
+        "primary_km": 160.0,
+        "lat": -16.8261775,
+        "lng": 145.7034854,
+        "alt": 8.4
+      }
+    ],
+    "personal_needs": [
+      {
+        "name": "Personal Needs \u2014 Buchan St",
+        "km_marks": [
+          75.0,
+          150.0
+        ],
+        "primary_km": 75.0,
+        "lat": -16.7368019,
+        "lng": 145.6631235,
+        "alt": 28.2
+      }
+    ],
+    "landmarks": [
+      {
+        "name": "Rex Lookout",
+        "note": "Iconic climb on Captain Cook Highway"
+      },
+      {
+        "name": "Craiglie",
+        "note": "Northern turnaround"
+      }
+    ]
+  },
+  "run": {
+    "distance_km": 42.2,
+    "laps": 4,
+    "venue": "Cairns Esplanade",
+    "direction": "anti-clockwise",
+    "cutoff_h": 16.5,
+    "cutoff_label": "16h 30m total from swim start",
+    "aid_stations": [
+      {
+        "name": "R1",
+        "km_marks": [
+          0.4,
+          2.8,
+          10.9,
+          13.3,
+          21.3,
+          23.8,
+          31.8,
+          34.3
+        ],
+        "primary_km": 0.4,
+        "lat": -16.9190437,
+        "lng": 145.7796654,
+        "alt": 6.4
+      },
+      {
+        "name": "R2",
+        "km_marks": [
+          1.2,
+          11.7,
+          22.2,
+          32.7
+        ],
+        "primary_km": 1.2,
+        "lat": -16.9241211,
+        "lng": 145.7806471,
+        "alt": 6.7
+      },
+      {
+        "name": "R3 (full station)",
+        "km_marks": [
+          4.3,
+          9.1,
+          14.8,
+          19.6,
+          25.3,
+          30.1,
+          35.7,
+          40.5
+        ],
+        "primary_km": 4.3,
+        "lat": -16.9139061,
+        "lng": 145.7713028,
+        "alt": 7.6
+      },
+      {
+        "name": "R4",
+        "km_marks": [
+          7.4,
+          17.8,
+          28.4,
+          38.4
+        ],
+        "primary_km": 7.4,
+        "lat": -16.9016078,
+        "lng": 145.7593312,
+        "alt": 6.9
+      }
+    ],
+    "personal_needs": [
+      {
+        "name": "Personal Needs \u2014 Lily St",
+        "km_marks": [
+          5.8,
+          16.3,
+          26.8,
+          37.3
+        ],
+        "primary_km": 5.8,
+        "lat": -16.9040968,
+        "lng": 145.7624626,
+        "alt": 6.6
+      }
+    ]
+  },
+  "wetsuit_rules": {
+    "mandatory_at_or_below_c": 16.0,
+    "optional_range_c": [
+      16.0,
+      26.0
+    ],
+    "likely_banned_above_c": 26.1,
+    "note": "Aus Triathlon granted higher cutoff for this race; official ruling posted race morning."
+  },
+  "official_conditions_baseline": {
+    "air_temp_high_c": 28,
+    "air_temp_low_c": 18,
+    "water_temp_avg_c": 23,
+    "source": "IM Cairns event website"
+  }
+}

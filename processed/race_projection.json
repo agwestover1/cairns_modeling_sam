@@ -1,0 +1,42 @@
+{
+  "_note": "Full-day IM Cairns 2026. Bike = 'ride the course' variable-power execution (NP-matched). Run = durability-calibrated (May24 datapoint -> IM penalty 20s/km). stretch_sub3run still requires the run-fitness lift (LT1 4:13 -> ~3:56/km).",
+  "2025_actual": {
+    "total": "8:45:38",
+    "bike": "4:27:14 (draft-aided)",
+    "run": "3:23:32"
+  },
+  "scenarios": {
+    "best": {
+      "swim": "0:46:30",
+      "t1": "0:02:40",
+      "bike": "4:32:00",
+      "t2": "0:03:20",
+      "run": "3:08:20",
+      "total": "8:32:50"
+    },
+    "target": {
+      "swim": "0:47:30",
+      "t1": "0:02:45",
+      "bike": "4:38:00",
+      "t2": "0:03:30",
+      "run": "3:11:51",
+      "total": "8:43:36"
+    },
+    "stretch_sub3run": {
+      "swim": "0:47:00",
+      "t1": "0:02:40",
+      "bike": "4:36:00",
+      "t2": "0:03:25",
+      "run": "3:00:00",
+      "total": "8:29:05"
+    },
+    "conservative": {
+      "swim": "0:48:30",
+      "t1": "0:03:00",
+      "bike": "5:00:00",
+      "t2": "0:04:00",
+      "run": "3:23:15",
+      "total": "9:18:45"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "source": "Extracted from screenshots in 2025_results/ (IRONMAN Tracker app)",
+    "extracted_on": "2026-05-28",
+    "notes": "Sam Askey-Doran's 2025 IRONMAN Cairns full race timing data. The 'pace' column for bike checkpoints is split speed (km/h) between consecutive timing mats. For run checkpoints, pace is min:sec/km. Caveat: IRONMAN timing mat spacing is notoriously uneven, so individual split paces can look erratic — aggregate paces are more reliable than per-segment for the run."
+  },
+
+  "athlete": {
+    "name": "Samuel Askey-Doran",
+    "bib": 156,
+    "age_group": "M18-24"
+  },
+
+  "race": {
+    "name": "2025 IRONMAN Cairns",
+    "date": "2025-06-15",
+    "venue": "Palm Cove → Captain Cook Highway → Cairns CBD",
+    "timezone": "Australia/Brisbane (AEST, UTC+10, no DST)"
+  },
+
+  "summary": {
+    "swim_time_s": 2878,
+    "swim_time_hms": "0:47:58",
+    "swim_pace_per_100m": "1:14",
+    "swim_rank_ag": 1,
+    "swim_rank_gender": 1,
+    "swim_rank_overall": 1,
+
+    "t1_time_s": 173,
+    "t1_time_hms": "0:02:53",
+
+    "bike_time_s": 16034,
+    "bike_time_hms": "4:27:14",
+    "bike_avg_speed_kmh": 40.23,
+    "bike_rank_ag": 1,
+    "bike_rank_gender": 12,
+    "bike_rank_overall": 12,
+
+    "t2_time_s": 243,
+    "t2_time_hms": "0:04:03",
+
+    "run_time_s": 12212,
+    "run_time_hms": "3:23:32",
+    "run_avg_pace_per_km": "4:49",
+    "run_rank_ag": 3,
+    "run_rank_gender": 57,
+    "run_rank_overall": 71,
+
+    "total_time_s": 31537,
+    "total_time_hms": "8:45:38",
+    "final_rank_overall": 21,
+    "final_rank_ag": 1,
+    "context_note": "Finished 21st overall in a field that included professional athletes who started ~50 min earlier. Won M18-24 by a large margin."
+  },
+
+  "start_time_local": "2025-06-15T07:50:03+10:00",
+
+  "swim_splits": [
+    {"label": "Swim", "cum_time_hms": "0:47:58", "tod": "08:38:01", "pace": "1:14/100m"}
+  ],
+
+  "bike_splits": [
+    {"km": 1.4,  "cum_time_hms": "0:02:13", "tod": "08:43:05", "split_speed_kmh": 35.22, "_note": "Race start ramp"},
+    {"km": 19.0, "cum_time_hms": "0:27:03", "tod": "09:07:55", "split_speed_kmh": 42.88},
+    {"km": 31.0, "cum_time_hms": "0:43:32", "tod": "09:24:24", "split_speed_kmh": 44.25},
+    {"km": 35.3, "cum_time_hms": "0:48:29", "tod": "09:29:21", "split_speed_kmh": 48.18, "_note": "Peak speed — N-bound tailwind segment"},
+    {"km": 41.2, "cum_time_hms": "0:56:41", "tod": "09:37:33", "split_speed_kmh": 42.52},
+    {"km": 46.0, "cum_time_hms": "1:03:53", "tod": "09:44:44", "split_speed_kmh": 41.73},
+    {"km": 58.0, "cum_time_hms": "1:24:13", "tod": "10:05:05", "split_speed_kmh": 36.27, "_note": "Climb section / corners / Craiglie turn"},
+    {"km": 76.0, "cum_time_hms": "1:49:51", "tod": "10:30:43", "split_speed_kmh": 41.43},
+    {"km": 94.0, "cum_time_hms": "2:14:47", "tod": "10:55:39", "split_speed_kmh": 42.62},
+    {"km": 106.0,"cum_time_hms": "2:31:16", "tod": "11:12:08", "split_speed_kmh": 44.58, "_note": "Lap 2 outbound — N-bound tailwind"},
+    {"km": 110.0,"cum_time_hms": "2:36:29", "tod": "11:17:21", "split_speed_kmh": 44.58},
+    {"km": 116.0,"cum_time_hms": "2:44:59", "tod": "11:25:51", "split_speed_kmh": 40.97},
+    {"km": 121.0,"cum_time_hms": "2:52:40", "tod": "11:33:32", "split_speed_kmh": 39.34},
+    {"km": 133.0,"cum_time_hms": "3:14:13", "tod": "11:55:05", "split_speed_kmh": 34.10, "_note": "Slowest section — lap 2 climbs + fatigue"},
+    {"km": 151.0,"cum_time_hms": "3:41:06", "tod": "12:21:58", "split_speed_kmh": 39.31},
+    {"km": 167.0,"cum_time_hms": "4:06:17", "tod": "12:47:09", "split_speed_kmh": 38.35},
+    {"km": 175.0,"cum_time_hms": "4:21:01", "tod": "13:01:53", "split_speed_kmh": 35.87, "_note": "Headwind return to Cairns"},
+    {"km": 180.0,"cum_time_hms": "4:27:14", "tod": "13:08:06", "split_speed_kmh": 36.53, "_note": "Bike finish"}
+  ],
+
+  "run_splits": [
+    {"km": 1.3,  "cum_time_hms": "0:05:26", "tod": "13:17:34", "pace_per_km": "4:19"},
+    {"km": 2.4,  "cum_time_hms": "0:10:44", "tod": "13:22:52", "pace_per_km": "4:22"},
+    {"km": 4.3,  "cum_time_hms": "0:18:49", "tod": "13:30:57", "pace_per_km": "3:51"},
+    {"km": 6.7,  "cum_time_hms": "0:29:39", "tod": "13:41:47", "pace_per_km": "4:56"},
+    {"km": 9.2,  "cum_time_hms": "0:40:51", "tod": "13:52:58", "pace_per_km": "5:03"},
+    {"km": 10.5, "cum_time_hms": "0:46:18", "tod": "13:58:26", "pace_per_km": "3:36"},
+    {"km": 11.7, "cum_time_hms": "0:51:48", "tod": "14:03:56", "pace_per_km": "4:27"},
+    {"km": 12.9, "cum_time_hms": "0:57:30", "tod": "14:09:37", "pace_per_km": "4:40"},
+    {"km": 14.8, "cum_time_hms": "1:06:02", "tod": "14:18:10", "pace_per_km": "4:04"},
+    {"km": 17.2, "cum_time_hms": "1:17:23", "tod": "14:29:36", "pace_per_km": "5:13"},
+    {"km": 19.7, "cum_time_hms": "1:29:15", "tod": "14:41:23", "pace_per_km": "5:19"},
+    {"km": 21.1, "cum_time_hms": "1:35:12", "tod": "14:47:20", "pace_per_km": "3:56"},
+    {"km": 22.2, "cum_time_hms": "1:42:00", "tod": "14:54:08", "pace_per_km": "5:30"},
+    {"km": 23.4, "cum_time_hms": "1:48:03", "tod": "15:00:11", "pace_per_km": "4:58"},
+    {"km": 25.3, "cum_time_hms": "1:57:17", "tod": "15:09:25", "pace_per_km": "4:23"},
+    {"km": 27.7, "cum_time_hms": "2:09:52", "tod": "15:22:00", "pace_per_km": "5:44"},
+    {"km": 30.1, "cum_time_hms": "2:22:32", "tod": "15:34:40", "pace_per_km": "5:43"},
+    {"km": 31.0, "cum_time_hms": "2:28:54", "tod": "15:41:02", "pace_per_km": "4:13"},
+    {"km": 32.7, "cum_time_hms": "2:35:03", "tod": "15:47:11", "pace_per_km": "4:56"},
+    {"km": 33.9, "cum_time_hms": "2:41:16", "tod": "15:53:24", "pace_per_km": "5:04"},
+    {"km": 35.8, "cum_time_hms": "2:50:46", "tod": "16:02:54", "pace_per_km": "4:32"},
+    {"km": 38.2, "cum_time_hms": "3:03:36", "tod": "16:15:44", "pace_per_km": "5:51"},
+    {"km": 40.6, "cum_time_hms": "3:16:11", "tod": "16:28:19", "pace_per_km": "5:41"},
+    {"km": 42.2, "cum_time_hms": "3:23:32", "tod": "16:35:40", "pace_per_km": "4:06", "_note": "Finish"}
+  ],
+
+  "analysis_notes": {
+    "performance_profile": "Swim-elite, bike-strong, run-conservative — classic AG triathlete pattern. Lost 59 places on the run (12th → 71st overall) but held #1 in M18-24 because of the swim+bike margin.",
+    "bike_pacing_shape": "Faster N-bound (tailwind component of SE trade wind), slower S-bound. Lap 2 ~5% slower than lap 1, consistent with fatigue plus possible wind picking up later in the morning.",
+    "vs_v2_model_prediction": "Our physics_sim v2 predicted 4:23:49 at CdA 0.258 / 340W under historical median wind. Actual 4:27:14 → 3:25 (≈1.3%) over prediction, within professional-grade model accuracy. Remaining gap to be closed by personalizing mass, Crr, CdA from his TrainingPeaks workout files.",
+    "anecdote_reconciliation": "Sam's '340W → 4:15 at CdA 0.258' anecdote is consistent with our calm-day prediction (4:12:39 at 5 km/h wind). Reality 2025 was a normal-wind day → 4:27.",
+    "run_pacing_caveat": "Per-segment run paces range from 3:36/km to 5:51/km. IM timing mats are unevenly spaced; aggregate 4:49/km is more meaningful than individual splits."
+  }
+}

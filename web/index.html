@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ironman Cairns — Course Explorer</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Ironman Cairns — Course Explorer</h1>
+    <nav class="view-tabs">
+      <a class="view-tab active" href="index.html">2D Map</a>
+      <a class="view-tab" href="3d.html">3D View</a>
+    </nav>
+    <div class="header-controls">
+      <div class="discipline-toggles">
+        <label><input type="checkbox" data-discipline="swim" checked /> <span class="swatch swim"></span> Swim</label>
+        <label><input type="checkbox" data-discipline="bike" checked /> <span class="swatch bike"></span> Bike</label>
+        <label><input type="checkbox" data-discipline="run" checked /> <span class="swatch run"></span> Run</label>
+      </div>
+      <div class="overlay-toggles">
+        <label><input type="checkbox" id="show-aid" checked /> Aid stations</label>
+        <label><input type="checkbox" id="show-needs" checked /> Personal needs</label>
+        <label><input type="checkbox" id="show-climbs" checked /> Climbs</label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="map"></div>
+    <aside id="sidebar">
+      <section id="course-summary">
+        <h2>Course Summary</h2>
+        <table id="summary-table"></table>
+      </section>
+
+      <section id="scrubber">
+        <h2>Walk the course</h2>
+        <div class="scrubber-controls">
+          <select id="scrub-discipline">
+            <option value="swim">Swim</option>
+            <option value="bike" selected>Bike</option>
+            <option value="run">Run</option>
+          </select>
+          <input type="range" id="scrub-range" min="0" max="1000" value="0" />
+        </div>
+        <dl id="scrub-readout">
+          <div><dt>Distance</dt><dd id="r-dist">— km</dd></div>
+          <div><dt>Elevation</dt><dd id="r-alt">— m</dd></div>
+          <div><dt>Grade</dt><dd id="r-grade">— %</dd></div>
+          <div><dt>Heading</dt><dd id="r-bearing">— °</dd></div>
+        </dl>
+      </section>
+
+      <section id="profile-section">
+        <h2 id="profile-title">Elevation Profile</h2>
+        <div class="smoothing-control">
+          <label for="smooth-range">Smoothing</label>
+          <input type="range" id="smooth-range" min="0" max="60" value="6" />
+          <span id="smooth-readout">~90m window</span>
+        </div>
+        <canvas id="profile" width="600" height="180"></canvas>
+      </section>
+
+      <section id="climbs-section">
+        <h2 id="climbs-title">Notable Climbs</h2>
+        <div id="climbs-list">Loading…</div>
+      </section>
+
+      <section id="weather-section">
+        <h2>Race-day Weather Seed</h2>
+        <p class="muted-note">Historical median across 2018–2024 (Open-Meteo ERA5).</p>
+        <div id="weather-readout"></div>
+      </section>
+
+      <section id="sim-section">
+        <h2>Bike Time Simulator</h2>
+        <p class="muted-note">Forward simulation: pedal power + CdA + wind + temp → predicted bike split.</p>
+        <div id="sim-results"></div>
+      </section>
+
+      <section id="raceday-section">
+        <h2>Full-Day Race Projection</h2>
+        <p class="muted-note">Swim + T1 + bike (ridden to course) + T2 + run, per scenario. Drag the swim slider — assumed same as 2025 or faster.</p>
+        <div class="smoothing-control">
+          <label for="swim-range">Swim</label>
+          <input type="range" id="swim-range" min="2400" max="2878" step="15" value="2878" />
+          <span id="swim-readout">0:47:58</span>
+        </div>
+        <div id="raceday-results"></div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>

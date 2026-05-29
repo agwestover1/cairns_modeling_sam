@@ -1,0 +1,301 @@
+{
+  "_note": "Run leg paced from physiology (separate from bike physics). Cairns run is 3 laps, FLAT (~322m / 42.9km), historically warm (~29C in 2025). GOAL is a sub-3:00 marathon.",
+  "lap_detail": {
+    "2025_cairns_race": [
+      {
+        "km": 10.0,
+        "s": 2684.7,
+        "pace_s_km": 268.474,
+        "hr": 155
+      },
+      {
+        "km": 10.0,
+        "s": 2832.7,
+        "pace_s_km": 283.2708,
+        "hr": 155
+      },
+      {
+        "km": 10.0,
+        "s": 3104.5,
+        "pace_s_km": 310.4509,
+        "hr": 148
+      },
+      {
+        "km": 10.0,
+        "s": 3097.0,
+        "pace_s_km": 309.70140000000004,
+        "hr": 148
+      },
+      {
+        "km": 1.68,
+        "s": 820.8,
+        "pace_s_km": 488.4871749092424,
+        "hr": 136
+      }
+    ],
+    "2026-04-08_3x2km_lt2": [
+      {
+        "km": 2.38,
+        "s": 644.8,
+        "pace_s_km": 270.62600725221597,
+        "hr": 146
+      },
+      {
+        "km": 2.01,
+        "s": 428.9,
+        "pace_s_km": 213.49645615991082,
+        "hr": 166
+      },
+      {
+        "km": 2.0,
+        "s": 444.8,
+        "pace_s_km": 222.04676056056755,
+        "hr": 163
+      },
+      {
+        "km": 2.0,
+        "s": 426.1,
+        "pace_s_km": 212.95071890133283,
+        "hr": 169
+      },
+      {
+        "km": 2.21,
+        "s": 659.4,
+        "pace_s_km": 298.7012692861738,
+        "hr": 146
+      }
+    ],
+    "2026-04-20_10x1km_track": [
+      {
+        "km": 2.94,
+        "s": 855.5,
+        "pace_s_km": 290.94801493643854,
+        "hr": 136
+      },
+      {
+        "km": 1.0,
+        "s": 213.0,
+        "pace_s_km": 212.67369429803546,
+        "hr": 154
+      },
+      {
+        "km": 1.0,
+        "s": 212.6,
+        "pace_s_km": 212.80531753023143,
+        "hr": 158
+      },
+      {
+        "km": 1.01,
+        "s": 216.9,
+        "pace_s_km": 214.8595372058008,
+        "hr": 157
+      },
+      {
+        "km": 1.0,
+        "s": 211.9,
+        "pace_s_km": 212.8879648044356,
+        "hr": 158
+      },
+      {
+        "km": 1.0,
+        "s": 213.5,
+        "pace_s_km": 213.4742272163794,
+        "hr": 159
+      },
+      {
+        "km": 1.0,
+        "s": 213.0,
+        "pace_s_km": 212.28773020808416,
+        "hr": 160
+      },
+      {
+        "km": 1.0,
+        "s": 218.5,
+        "pace_s_km": 218.71114359225925,
+        "hr": 157
+      },
+      {
+        "km": 1.0,
+        "s": 217.8,
+        "pace_s_km": 218.78635071470904,
+        "hr": 158
+      },
+      {
+        "km": 1.0,
+        "s": 217.6,
+        "pace_s_km": 217.7294105874112,
+        "hr": 156
+      },
+      {
+        "km": 1.0,
+        "s": 211.9,
+        "pace_s_km": 211.46526689752213,
+        "hr": 160
+      },
+      {
+        "km": 1.58,
+        "s": 482.2,
+        "pace_s_km": 306.10792659315825,
+        "hr": 139
+      }
+    ],
+    "2026-05-22_3x30_lt1": [
+      {
+        "km": 4.91,
+        "s": 1293.1,
+        "pace_s_km": 263.61788576449555,
+        "hr": 147
+      },
+      {
+        "km": 7.11,
+        "s": 1804.5,
+        "pace_s_km": 253.63261198351523,
+        "hr": 155
+      },
+      {
+        "km": 1.07,
+        "s": 323.1,
+        "pace_s_km": 303.27745762393704,
+        "hr": 144
+      },
+      {
+        "km": 6.0,
+        "s": 1517.6,
+        "pace_s_km": 252.7756957977315,
+        "hr": 155
+      },
+      {
+        "km": 1.18,
+        "s": 300.5,
+        "pace_s_km": 254.42523578116794,
+        "hr": 156
+      },
+      {
+        "km": 1.22,
+        "s": 346.4,
+        "pace_s_km": 283.5490499463778,
+        "hr": 145
+      },
+      {
+        "km": 7.17,
+        "s": 1802.6,
+        "pace_s_km": 251.37565421844516,
+        "hr": 158
+      },
+      {
+        "km": 1.36,
+        "s": 416.6,
+        "pace_s_km": 305.4619846163999,
+        "hr": 145
+      }
+    ],
+    "2026-05-24_3x10_lt1_post6hr": [
+      {
+        "km": 2.59,
+        "s": 720.5,
+        "pace_s_km": 277.65899640444417,
+        "hr": 151
+      },
+      {
+        "km": 2.37,
+        "s": 600.9,
+        "pace_s_km": 254.06680761099366,
+        "hr": 158
+      },
+      {
+        "km": 0.56,
+        "s": 167.9,
+        "pace_s_km": 299.7856836690956,
+        "hr": 146
+      },
+      {
+        "km": 2.39,
+        "s": 602.6,
+        "pace_s_km": 252.2958671042937,
+        "hr": 159
+      },
+      {
+        "km": 0.56,
+        "s": 168.8,
+        "pace_s_km": 299.4430352803448,
+        "hr": 150
+      },
+      {
+        "km": 2.43,
+        "s": 610.7,
+        "pace_s_km": 251.42525442149983,
+        "hr": 158
+      },
+      {
+        "km": 2.67,
+        "s": 786.9,
+        "pace_s_km": 294.21941543558165,
+        "hr": 147
+      }
+    ]
+  },
+  "fitness": {
+    "lt2_threshold_pace_per_km": "3:33",
+    "lt2_note": "1km/2km reps ~3:33/km, HR 160-176. Strong leg speed.",
+    "lt1_pace_per_km": "4:13",
+    "lt1_note": "Fresh 3x25-30min efforts ~4:13/km at HR ~155.",
+    "2025_im_run_pace_per_km": "4:49"
+  },
+  "durability_check": {
+    "_what": "Fresh LT1 (May22) vs FATIGUED LT1 (May24, day after the 6hr ride) at the same pace.",
+    "fresh_lt1_pace_per_km": "4:13",
+    "fresh_lt1_hr": 155,
+    "fatigued_lt1_pace_per_km": "4:12",
+    "fatigued_lt1_hr": 158,
+    "hr_cost_of_fatigue_bpm": 3.0,
+    "reading": "Held LT1 pace (~4:12/km) on legs fatigued by a 6hr ride at only +3.0 bpm \u2014 strong fatigue resistance. Supports modelling the IM-off-bike penalty at the lower-middle (20s/km). CAVEAT: 1hr run off an AEROBIC ride, not 3h+ off a race bike, so not extrapolated to the optimistic extreme."
+  },
+  "sub3_goal": {
+    "required_even_pace_per_km": "4:16",
+    "verdict": "GOAL requiring a fitness lift, NOT a current-fitness outcome. At current run fitness the model ceiling is ~3:08:20 (best case); sub-3 is ~-8min beyond it. 4:16/km equals his current FRESH LT1 (4:13); the new durability evidence (small HR cost when fatigued) is encouraging but the 3h+ duration + heat gap remains. His threshold (3:33) shows the speed ceiling is there to build it.",
+    "gap_analysis": {
+      "lt1_now_per_km": "4:13",
+      "lt1_needed_for_sub3_per_km": "3:56",
+      "lt1_gap_s_per_km": 17.0,
+      "reading": "LT1 must drop ~17s/km (to ~3:56) so 4:16/km sits below threshold and is holdable when fatigued. With the durability evidence the penalty is modelled at 20s/km (was 22). He has the speed (3:33 threshold); the gap is aerobic durability + executing it off the bike in heat.",
+      "vs_2025": "Sub-3 is 33s/km faster than his 2025 IM run (4:49) = ~23 min. Big jump, but his threshold/LT1 have clearly improved."
+    },
+    "what_closes_the_gap": [
+      "Push LT1 from 4:13 toward ~3:58/km (long tempo / sweet-spot run blocks).",
+      "Brick runs at 4:16/km OFF a hard bike, so goal pace feels controlled when fatigued.",
+      "Don't overbike: every extra bike IF point taxes the run; protect ~IF 0.76-0.78.",
+      "Heat acclimation (Cairns ~29C) \u2014 heat alone can cost 15-25 s/km if unprepared.",
+      "Fuel/gut training to prevent the 2025 GI blow-up."
+    ]
+  },
+  "marathon_projection": {
+    "sub3_goal": {
+      "pace_per_km": "4:16",
+      "time_hms": "3:00:01"
+    },
+    "best_case": {
+      "pace_per_km": "4:28",
+      "time_hms": "3:08:20"
+    },
+    "target": {
+      "pace_per_km": "4:33",
+      "time_hms": "3:11:51"
+    },
+    "conservative": {
+      "pace_per_km": "4:49",
+      "time_hms": "3:23:15"
+    },
+    "assumptions": "Off a ~286W/IF0.76 bike. best_case ~ the sub-3 neighbourhood on a great day; target = solid current-fitness execution; conservative = 2025 repeat. Heat is the biggest swing."
+  },
+  "sub3_pacing_plan": {
+    "the_2025_mistake": "Went out 4:19-4:22/km (~threshold) for 5km, blew to 5:00+/km with vomits; lost 59 places. Overpace + GI + heat.",
+    "even_split_target": "4:16/km the whole way (NOT a fast start)",
+    "segments": [
+      "0-10km: 4:18-4:20/km, HR <=150. Feel easy. This banks the back half.",
+      "10-32km: lock 4:16/km, HR 150-156. Metronome. This is the race.",
+      "32-42km: hold 4:16; if HR<158 and gut OK, ease toward 4:12. Negative split wins."
+    ],
+    "grade_note": "Cairns run is flat; grade-adjustment is minor. On the gentle rises hold EFFORT/HR (let pace slip ~5-8s/km) and take it back on the falls (~3-5s/km quicker) \u2014 never surge a rise.",
+    "hr_cap": "Keep HR <=156 through 32km; his LT1 work sits at 155-158, so >158 early = overcooked."
+  }
+}

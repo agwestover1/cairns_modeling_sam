@@ -1,0 +1,21 @@
+{
+  "scenario": "median_race_day",
+  "source": "Open-Meteo archive ERA5 reanalysis; race-window 05:00-17:00 AEST",
+  "wind_speed_kmh_median": 17.504166666666666,
+  "wind_gust_kmh_median_of_max": 57.45,
+  "wind_direction_modal_cardinal": "SE",
+  "wind_direction_vector_mean_deg": 140.03871550581562,
+  "wind_direction_vector_mean_cardinal": "SE",
+  "temp_c_low_median": 20.65,
+  "temp_c_high_median": 25.35,
+  "temp_c_mean_median": 22.991666666666667,
+  "humidity_pct_mean_median": 65.79166666666666,
+  "precip_mm_total_median": 0.05,
+  "im_published": {
+    "air_temp_high_c": 28.0,
+    "air_temp_low_c": 18.0,
+    "water_temp_avg_c": 23.0,
+    "source_note": "Ironman Cairns athlete guide / event page"
+  },
+  "notes": "Use vector-mean direction for prevailing wind on the coastal north-south bike course. Modal cardinal bin captures the most common hourly direction. Cairns has no DST (Australia/Brisbane)."
+}

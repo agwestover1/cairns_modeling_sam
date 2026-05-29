@@ -1,0 +1,47 @@
+{
+  "_method": "Aero-dominant power-balance inversion on >46.8km/h near-steady samples; wind decomposed onto GPS heading at rider height.",
+  "_inputs": {
+    "crr": 0.004,
+    "mass_kg": 90.5,
+    "eta": 0.975
+  },
+  "rides": {
+    "2025_cairns_race": {
+      "file": "2025-06-14-224112-ELEMNT BOLT 7ECA-79-0.fit",
+      "rho_kg_m3": 1.1904,
+      "wind_kmh_rider": 15.32,
+      "mass_kg": 90.5,
+      "crr": 0.004,
+      "n_samples": 1634,
+      "cda_median": 0.267,
+      "cda_p25": 0.1953,
+      "cda_p75": 0.3417,
+      "cda_mean": 0.269
+    },
+    "2026-04-19_5hr": {
+      "file": "2026-04-19-001548-ELEMNT_BOLT_7ECA-294-0.fit",
+      "rho_kg_m3": 1.2432,
+      "wind_kmh_rider": 7.92,
+      "mass_kg": 90.5,
+      "crr": 0.004,
+      "n_samples": 1299,
+      "cda_median": 0.2662,
+      "cda_p25": 0.2273,
+      "cda_p75": 0.3319,
+      "cda_mean": 0.2815
+    },
+    "2026-05-23_6hr": {
+      "file": "2026-05-23-213119-ELEMNT_BOLT_7ECA-317-0.fit",
+      "rho_kg_m3": 1.2432,
+      "wind_kmh_rider": 9.5,
+      "mass_kg": 90.5,
+      "crr": 0.004,
+      "n_samples": 1344,
+      "cda_median": 0.2678,
+      "cda_p25": 0.2196,
+      "cda_p75": 0.3368,
+      "cda_mean": 0.2777
+    }
+  },
+  "recommended_cda_zero_yaw": 0.267
+}

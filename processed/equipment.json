@@ -1,0 +1,65 @@
+{
+  "_note": "Sam's 2026 race equipment and the physics constants derived from it. Lives at processed/equipment.json; consumed by scripts/physics_sim.py. Edit here, not in code. Figures sourced — see _sources.",
+  "rider_position": {
+    "frame": "Scott Plasma Gen 6 (superbike / tri)",
+    "wheels": "Princeton CarbonWorks Mach 7580 TSV2 tri-spoke front + Blur 633 disc rear",
+    "cda_m2": {
+      "central": 0.230,
+      "optimistic": 0.220,
+      "conservative": 0.245,
+      "basis": "CALIBRATED from real ride data. The cleanest physics anchor is the COASTING-in-tuck back-solve on the 2025 race (power==0, so NO power-meter/drivetrain dependence): CdA ~0.219 at 46.8+ km/h. That is Sam's genuine high-speed aero drag. Sustained aero PEDALING is typically a touch higher than a pure coasting tuck, so central 0.230; optimistic 0.220 (holds the tuck); conservative 0.245 (position degrades over 180km / less-aero moments, ~ the powered-mixed descent solve of 0.267 minus Plasma-6 gains). The Plasma 6 + Princeton disc + tri-spoke supports the low end.",
+      "why_not_0_245_or_0_267": "The powered-mixed descent solve gave 0.267, but it is contaminated by less-aero rolling/pedaling moments and possible power-meter error, so it overstates sustained flat-aero CdA. The coasting solve isolates pure aero and is trusted more.",
+      "2025_race_note": "Reproducing the actual 2025 4:27:14 at his MEASURED 290W NP requires CdA 0.18-0.21 (implausibly low for a loaded tri bike) -> confirms 2025 was substantially DRAFT-AIDED (12m rule + AG packs). 2025 time is therefore NOT a calibration anchor; recent power + first-principles physics are. This matches the athlete's own guidance.",
+      "next_step": "A Chung virtual-elevation solve on a chosen flat/rolling SUSTAINED-aero segment would pin the race-relevant CdA more tightly. Also worth a power-meter static/calibration check."
+    }
+  },
+  "tires": {
+    "model": "Continental Grand Prix 5000 TT TR",
+    "width_mm": 28,
+    "tube": "Pirelli TPU (SmarTube-class)",
+    "pressure_psi": [80, 82],
+    "crr": {
+      "value": 0.0040,
+      "range": [0.0036, 0.0044],
+      "basis": [
+        "SOURCED: bicyclerollingresistance.com measures GP5000 TT TR 28mm at drum Crr 0.00249 (8.3W/tyre @ 29km/h, 42.5kg load, 72psi/5.0bar). Higher pressures trend slightly lower on the drum.",
+        "Drum->real-road correction for asphalt is ~1.5-1.6x (drum is smooth steel; real tarmac adds impedance/suspension losses): 0.00249 * 1.6 ~= 0.0040.",
+        "TPU tube vs tubeless adds a small amount (~+0.0001-0.0002), similar to latex.",
+        "Cairns is Captain Cook Hwy coastal tarmac: good but with coarser chip-seal sections, so a mid-correction is appropriate. Central 0.0040, range 0.0036 (smooth) - 0.0044 (coarser)."
+      ]
+    }
+  },
+  "mass": {
+    "rider_race_kg": 78,
+    "rider_current_kg": 80,
+    "bike_ready_empty_kg": 10.0,
+    "bike_breakdown": {
+      "plasma6_complete_claimed_kg": 9.6,
+      "note": "Plasma 6 complete (high-end build) ~9.6kg per Scott. Princeton Mach 7580 TSV2 front 925g + Blur 633 disc rear ~970g (~1.9kg wheelset) is similar-to-slightly-heavier than stock aero wheels. Add pedals (~0.3kg), computer/mount, bottle cages + integrated hydration hardware + empty bottles (~0.3-0.5kg) -> race-ready empty ~10.0kg."
+    },
+    "consumables_start_kg": 5.0,
+    "consumables_note": "User spec: 4 L water (4.0kg) + ~1kg carb mix = 5.0kg AT START. Water depletes and is topped up at aid stations, so the time-AVERAGE carried load over the 180km leg is ~2.5kg, not 5kg. Split physics uses time-average mass.",
+    "consumables_avg_kg": 2.5,
+    "total_start_kg": 93.0,
+    "total_race_kg": 90.5,
+    "range_kg": [88, 93],
+    "FLAG": "rider_race_kg 78 (currently 80) is now CONFIRMED by user. total_race_kg 90.5 = 78 rider + 10.0 bike + 2.5 avg consumables. This is far heavier than the old 75kg placeholder and materially slows the predicted split. Confirm Sam's actual carried-fluid strategy if 4L-at-once is literal vs total-consumed."
+  },
+  "drivetrain_eff": 0.975,
+  "drafting": {
+    "rule_m": 20,
+    "context": "IRONMAN pro draft zone expanded 12m -> 20m effective 2026-03-01 (RaceRanger/Marc Graveline study). User confirms 20m applies to Sam's race.",
+    "drag_reduction_pct_by_distance_calm": {"0m": 40, "5m": 20, "10m": 13.4, "15m": 10.6, "20m": 9},
+    "effective_avg_drag_reduction_pct": 3.0,
+    "note": "Swiss Side CFD (calm air). Real crosswinds (Cairns SE trades) cut this sharply; other sources call 20m benefit ~3% / 'negligible'. Benefit also applies ONLY to the aero term and ONLY when a legal rider is ahead. Effective race-average benefit is small + intermittent + 'minor slingshotting'. Modelled conservatively in the sim's drafting scenario."
+  },
+  "_sources": [
+    "https://www.bicyclerollingresistance.com/road-bike-reviews/continental-grand-prix-5000-tt-tr",
+    "https://www.scott-sports.com/global/en/plasma-6",
+    "https://www.princetoncarbon.com/product/mach-7580-ts/",
+    "https://www.princetoncarbon.com/product/blur-633/",
+    "https://www.swissside.com/blogs/news/the-deal-with-drafting",
+    "https://www.triathlete.com/culture/news/why-ironman-20-meter-draft-rule-matters/",
+    "https://www.tri247.com/triathlon-news/elite/ironman-announce-20-metres-draft-zone-pro-races-2026"
+  ]
+}

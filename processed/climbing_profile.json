@@ -1,0 +1,597 @@
+{
+  "_note": "Sam's gradient power/HR distribution + climb-recovery dynamics. Feeds the variable-power 'ride the course' bike model.",
+  "rides": {
+    "2026-04-19_5hr": {
+      "np_w": 307,
+      "grade_table": {
+        "<-6": {
+          "secs": 853,
+          "pct_time": 4.7,
+          "avg_power": 82,
+          "pct_of_np": 27,
+          "avg_hr": 127,
+          "avg_cad": 36,
+          "avg_kmh": 52.0
+        },
+        "-6..-4": {
+          "secs": 830,
+          "pct_time": 4.6,
+          "avg_power": 191,
+          "pct_of_np": 62,
+          "avg_hr": 139,
+          "avg_cad": 70,
+          "avg_kmh": 46.9
+        },
+        "-4..-2": {
+          "secs": 1571,
+          "pct_time": 8.6,
+          "avg_power": 249,
+          "pct_of_np": 81,
+          "avg_hr": 147,
+          "avg_cad": 82,
+          "avg_kmh": 44.3
+        },
+        "-2..0": {
+          "secs": 3490,
+          "pct_time": 19.2,
+          "avg_power": 283,
+          "pct_of_np": 92,
+          "avg_hr": 151,
+          "avg_cad": 86,
+          "avg_kmh": 38.9
+        },
+        "0..2": {
+          "secs": 3913,
+          "pct_time": 21.5,
+          "avg_power": 300,
+          "pct_of_np": 98,
+          "avg_hr": 154,
+          "avg_cad": 86,
+          "avg_kmh": 33.7
+        },
+        "2..4": {
+          "secs": 1860,
+          "pct_time": 10.2,
+          "avg_power": 309,
+          "pct_of_np": 101,
+          "avg_hr": 154,
+          "avg_cad": 81,
+          "avg_kmh": 26.6
+        },
+        "4..6": {
+          "secs": 1678,
+          "pct_time": 9.2,
+          "avg_power": 323,
+          "pct_of_np": 105,
+          "avg_hr": 154,
+          "avg_cad": 77,
+          "avg_kmh": 20.8
+        },
+        "6..8": {
+          "secs": 1645,
+          "pct_time": 9.1,
+          "avg_power": 336,
+          "pct_of_np": 110,
+          "avg_hr": 155,
+          "avg_cad": 71,
+          "avg_kmh": 17.1
+        },
+        ">8": {
+          "secs": 2310,
+          "pct_time": 12.7,
+          "avg_power": 343,
+          "pct_of_np": 112,
+          "avg_hr": 154,
+          "avg_cad": 64,
+          "avg_kmh": 12.7
+        }
+      },
+      "n_climbs_detected": 18,
+      "median_hr_drop_90s_after_climb": 3,
+      "climbs": [
+        {
+          "dur_s": 147,
+          "avg_grade": 6.0,
+          "climb_avg_power": 312,
+          "climb_avg_hr": 145,
+          "hr_at_top": 150,
+          "recovery_avg_power": 270,
+          "hr_after_90s": 148,
+          "hr_drop_90s": 1
+        },
+        {
+          "dur_s": 98,
+          "avg_grade": 8.8,
+          "climb_avg_power": 314,
+          "climb_avg_hr": 148,
+          "hr_at_top": 154,
+          "recovery_avg_power": 162,
+          "hr_after_90s": 135,
+          "hr_drop_90s": 19
+        },
+        {
+          "dur_s": 91,
+          "avg_grade": 6.2,
+          "climb_avg_power": 308,
+          "climb_avg_hr": 144,
+          "hr_at_top": 154,
+          "recovery_avg_power": 264,
+          "hr_after_90s": 140,
+          "hr_drop_90s": 15
+        },
+        {
+          "dur_s": 1019,
+          "avg_grade": 8.1,
+          "climb_avg_power": 335,
+          "climb_avg_hr": 156,
+          "hr_at_top": 159,
+          "recovery_avg_power": 138,
+          "hr_after_90s": 140,
+          "hr_drop_90s": 19
+        },
+        {
+          "dur_s": 391,
+          "avg_grade": 7.8,
+          "climb_avg_power": 318,
+          "climb_avg_hr": 153,
+          "hr_at_top": 153,
+          "recovery_avg_power": 295,
+          "hr_after_90s": 150,
+          "hr_drop_90s": 3
+        },
+        {
+          "dur_s": 191,
+          "avg_grade": 8.9,
+          "climb_avg_power": 312,
+          "climb_avg_hr": 152,
+          "hr_at_top": 150,
+          "recovery_avg_power": 159,
+          "hr_after_90s": 133,
+          "hr_drop_90s": 17
+        },
+        {
+          "dur_s": 591,
+          "avg_grade": 11.2,
+          "climb_avg_power": 332,
+          "climb_avg_hr": 154,
+          "hr_at_top": 157,
+          "recovery_avg_power": 126,
+          "hr_after_90s": 125,
+          "hr_drop_90s": 32
+        },
+        {
+          "dur_s": 94,
+          "avg_grade": 7.7,
+          "climb_avg_power": 299,
+          "climb_avg_hr": 149,
+          "hr_at_top": 153,
+          "recovery_avg_power": 137,
+          "hr_after_90s": 120,
+          "hr_drop_90s": 33
+        },
+        {
+          "dur_s": 129,
+          "avg_grade": 5.5,
+          "climb_avg_power": 297,
+          "climb_avg_hr": 141,
+          "hr_at_top": 146,
+          "recovery_avg_power": 322,
+          "hr_after_90s": 149,
+          "hr_drop_90s": -3
+        },
+        {
+          "dur_s": 351,
+          "avg_grade": 7.6,
+          "climb_avg_power": 313,
+          "climb_avg_hr": 151,
+          "hr_at_top": 154,
+          "recovery_avg_power": 164,
+          "hr_after_90s": 118,
+          "hr_drop_90s": 36
+        },
+        {
+          "dur_s": 103,
+          "avg_grade": 4.9,
+          "climb_avg_power": 317,
+          "climb_avg_hr": 147,
+          "hr_at_top": 147,
+          "recovery_avg_power": 290,
+          "hr_after_90s": 145,
+          "hr_drop_90s": 2
+        },
+        {
+          "dur_s": 98,
+          "avg_grade": 6.7,
+          "climb_avg_power": 319,
+          "climb_avg_hr": 150,
+          "hr_at_top": 151,
+          "recovery_avg_power": 363,
+          "hr_after_90s": 161,
+          "hr_drop_90s": -10
+        },
+        {
+          "dur_s": 107,
+          "avg_grade": 6.2,
+          "climb_avg_power": 378,
+          "climb_avg_hr": 157,
+          "hr_at_top": 158,
+          "recovery_avg_power": 257,
+          "hr_after_90s": 137,
+          "hr_drop_90s": 21
+        },
+        {
+          "dur_s": 175,
+          "avg_grade": 4.7,
+          "climb_avg_power": 329,
+          "climb_avg_hr": 154,
+          "hr_at_top": 154,
+          "recovery_avg_power": 322,
+          "hr_after_90s": 156,
+          "hr_drop_90s": -2
+        },
+        {
+          "dur_s": 130,
+          "avg_grade": 5.7,
+          "climb_avg_power": 389,
+          "climb_avg_hr": 170,
+          "hr_at_top": 171,
+          "recovery_avg_power": 350,
+          "hr_after_90s": 168,
+          "hr_drop_90s": 3
+        }
+      ]
+    },
+    "2026-05-23_6hr": {
+      "np_w": 291,
+      "grade_table": {
+        "<-6": {
+          "secs": 326,
+          "pct_time": 1.5,
+          "avg_power": 80,
+          "pct_of_np": 28,
+          "avg_hr": 137,
+          "avg_cad": 38,
+          "avg_kmh": 48.2
+        },
+        "-6..-4": {
+          "secs": 862,
+          "pct_time": 4.0,
+          "avg_power": 176,
+          "pct_of_np": 61,
+          "avg_hr": 143,
+          "avg_cad": 67,
+          "avg_kmh": 47.3
+        },
+        "-4..-2": {
+          "secs": 2023,
+          "pct_time": 9.3,
+          "avg_power": 221,
+          "pct_of_np": 76,
+          "avg_hr": 147,
+          "avg_cad": 79,
+          "avg_kmh": 43.9
+        },
+        "-2..0": {
+          "secs": 5818,
+          "pct_time": 26.9,
+          "avg_power": 265,
+          "pct_of_np": 91,
+          "avg_hr": 149,
+          "avg_cad": 84,
+          "avg_kmh": 37.9
+        },
+        "0..2": {
+          "secs": 6501,
+          "pct_time": 30.0,
+          "avg_power": 288,
+          "pct_of_np": 99,
+          "avg_hr": 150,
+          "avg_cad": 85,
+          "avg_kmh": 33.7
+        },
+        "2..4": {
+          "secs": 2735,
+          "pct_time": 12.6,
+          "avg_power": 306,
+          "pct_of_np": 105,
+          "avg_hr": 152,
+          "avg_cad": 81,
+          "avg_kmh": 27.0
+        },
+        "4..6": {
+          "secs": 1710,
+          "pct_time": 7.9,
+          "avg_power": 312,
+          "pct_of_np": 107,
+          "avg_hr": 151,
+          "avg_cad": 76,
+          "avg_kmh": 21.3
+        },
+        "6..8": {
+          "secs": 974,
+          "pct_time": 4.5,
+          "avg_power": 327,
+          "pct_of_np": 112,
+          "avg_hr": 151,
+          "avg_cad": 72,
+          "avg_kmh": 17.9
+        },
+        ">8": {
+          "secs": 680,
+          "pct_time": 3.1,
+          "avg_power": 342,
+          "pct_of_np": 117,
+          "avg_hr": 151,
+          "avg_cad": 67,
+          "avg_kmh": 13.8
+        }
+      },
+      "n_climbs_detected": 16,
+      "median_hr_drop_90s_after_climb": 6,
+      "climbs": [
+        {
+          "dur_s": 102,
+          "avg_grade": 8.9,
+          "climb_avg_power": 291,
+          "climb_avg_hr": 141,
+          "hr_at_top": 146,
+          "recovery_avg_power": 214,
+          "hr_after_90s": 136,
+          "hr_drop_90s": 10
+        },
+        {
+          "dur_s": 103,
+          "avg_grade": 4.9,
+          "climb_avg_power": 333,
+          "climb_avg_hr": 152,
+          "hr_at_top": 156,
+          "recovery_avg_power": 329,
+          "hr_after_90s": 156,
+          "hr_drop_90s": -1
+        },
+        {
+          "dur_s": 149,
+          "avg_grade": 6.0,
+          "climb_avg_power": 328,
+          "climb_avg_hr": 150,
+          "hr_at_top": 152,
+          "recovery_avg_power": 172,
+          "hr_after_90s": 133,
+          "hr_drop_90s": 20
+        },
+        {
+          "dur_s": 137,
+          "avg_grade": 8.7,
+          "climb_avg_power": 330,
+          "climb_avg_hr": 152,
+          "hr_at_top": 156,
+          "recovery_avg_power": 111,
+          "hr_after_90s": 126,
+          "hr_drop_90s": 30
+        },
+        {
+          "dur_s": 293,
+          "avg_grade": 5.8,
+          "climb_avg_power": 314,
+          "climb_avg_hr": 151,
+          "hr_at_top": 155,
+          "recovery_avg_power": 123,
+          "hr_after_90s": 140,
+          "hr_drop_90s": 14
+        },
+        {
+          "dur_s": 113,
+          "avg_grade": 4.9,
+          "climb_avg_power": 301,
+          "climb_avg_hr": 149,
+          "hr_at_top": 151,
+          "recovery_avg_power": 243,
+          "hr_after_90s": 144,
+          "hr_drop_90s": 8
+        },
+        {
+          "dur_s": 103,
+          "avg_grade": 4.9,
+          "climb_avg_power": 335,
+          "climb_avg_hr": 156,
+          "hr_at_top": 157,
+          "recovery_avg_power": 292,
+          "hr_after_90s": 152,
+          "hr_drop_90s": 5
+        },
+        {
+          "dur_s": 151,
+          "avg_grade": 5.2,
+          "climb_avg_power": 312,
+          "climb_avg_hr": 148,
+          "hr_at_top": 149,
+          "recovery_avg_power": 212,
+          "hr_after_90s": 142,
+          "hr_drop_90s": 7
+        },
+        {
+          "dur_s": 109,
+          "avg_grade": 4.1,
+          "climb_avg_power": 307,
+          "climb_avg_hr": 151,
+          "hr_at_top": 153,
+          "recovery_avg_power": 264,
+          "hr_after_90s": 146,
+          "hr_drop_90s": 6
+        },
+        {
+          "dur_s": 92,
+          "avg_grade": 5.2,
+          "climb_avg_power": 324,
+          "climb_avg_hr": 154,
+          "hr_at_top": 156,
+          "recovery_avg_power": 310,
+          "hr_after_90s": 152,
+          "hr_drop_90s": 4
+        },
+        {
+          "dur_s": 160,
+          "avg_grade": 9.0,
+          "climb_avg_power": 343,
+          "climb_avg_hr": 155,
+          "hr_at_top": 160,
+          "recovery_avg_power": 51,
+          "hr_after_90s": 112,
+          "hr_drop_90s": 48
+        },
+        {
+          "dur_s": 142,
+          "avg_grade": 6.3,
+          "climb_avg_power": 339,
+          "climb_avg_hr": 154,
+          "hr_at_top": 156,
+          "recovery_avg_power": 202,
+          "hr_after_90s": 146,
+          "hr_drop_90s": 9
+        },
+        {
+          "dur_s": 105,
+          "avg_grade": 4.4,
+          "climb_avg_power": 308,
+          "climb_avg_hr": 156,
+          "hr_at_top": 158,
+          "recovery_avg_power": 279,
+          "hr_after_90s": 156,
+          "hr_drop_90s": 2
+        },
+        {
+          "dur_s": 126,
+          "avg_grade": 5.6,
+          "climb_avg_power": 297,
+          "climb_avg_hr": 154,
+          "hr_at_top": 154,
+          "recovery_avg_power": 232,
+          "hr_after_90s": 148,
+          "hr_drop_90s": 6
+        },
+        {
+          "dur_s": 139,
+          "avg_grade": 3.4,
+          "climb_avg_power": 282,
+          "climb_avg_hr": 151,
+          "hr_at_top": 152,
+          "recovery_avg_power": 282,
+          "hr_after_90s": 152,
+          "hr_drop_90s": 0
+        }
+      ]
+    },
+    "2025_race": {
+      "np_w": 290,
+      "grade_table": {
+        "-6..-4": {
+          "secs": 420,
+          "pct_time": 2.6,
+          "avg_power": 201,
+          "pct_of_np": 69,
+          "avg_hr": 156,
+          "avg_cad": 70,
+          "avg_kmh": 52.4
+        },
+        "-4..-2": {
+          "secs": 828,
+          "pct_time": 5.2,
+          "avg_power": 240,
+          "pct_of_np": 83,
+          "avg_hr": 156,
+          "avg_cad": 82,
+          "avg_kmh": 46.5
+        },
+        "-2..0": {
+          "secs": 6363,
+          "pct_time": 39.7,
+          "avg_power": 277,
+          "pct_of_np": 95,
+          "avg_hr": 155,
+          "avg_cad": 88,
+          "avg_kmh": 41.9
+        },
+        "0..2": {
+          "secs": 6294,
+          "pct_time": 39.3,
+          "avg_power": 285,
+          "pct_of_np": 98,
+          "avg_hr": 155,
+          "avg_cad": 85,
+          "avg_kmh": 40.2
+        },
+        "2..4": {
+          "secs": 963,
+          "pct_time": 6.0,
+          "avg_power": 312,
+          "pct_of_np": 108,
+          "avg_hr": 157,
+          "avg_cad": 82,
+          "avg_kmh": 33.3
+        },
+        "4..6": {
+          "secs": 759,
+          "pct_time": 4.7,
+          "avg_power": 336,
+          "pct_of_np": 116,
+          "avg_hr": 158,
+          "avg_cad": 77,
+          "avg_kmh": 26.2
+        },
+        "6..8": {
+          "secs": 349,
+          "pct_time": 2.2,
+          "avg_power": 348,
+          "pct_of_np": 120,
+          "avg_hr": 157,
+          "avg_cad": 70,
+          "avg_kmh": 22.5
+        },
+        ">8": {
+          "secs": 26,
+          "pct_time": 0.2,
+          "avg_power": 365,
+          "pct_of_np": 126,
+          "avg_hr": 160,
+          "avg_cad": 58,
+          "avg_kmh": 15.6
+        }
+      },
+      "n_climbs_detected": 2,
+      "median_hr_drop_90s_after_climb": 6,
+      "climbs": [
+        {
+          "dur_s": 152,
+          "avg_grade": 4.9,
+          "climb_avg_power": 348,
+          "climb_avg_hr": 161,
+          "hr_at_top": 162,
+          "recovery_avg_power": 262,
+          "hr_after_90s": 158,
+          "hr_drop_90s": 4
+        },
+        {
+          "dur_s": 146,
+          "avg_grade": 5.0,
+          "climb_avg_power": 347,
+          "climb_avg_hr": 160,
+          "hr_at_top": 165,
+          "recovery_avg_power": 284,
+          "hr_after_90s": 158,
+          "hr_drop_90s": 7
+        }
+      ]
+    }
+  },
+  "power_by_grade_pct_of_np": {
+    "<-6": 28,
+    "-6..-4": 62,
+    "-4..-2": 78,
+    "-2..0": 92,
+    "0..2": 98,
+    "2..4": 103,
+    "4..6": 106,
+    "6..8": 111,
+    ">8": 114
+  }
+}

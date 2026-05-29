@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ironman Cairns — 3D View</title>
+  <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css"
+        integrity="sha384-GTsgKcJXGSkBp0M68qpxkz9XovzVH0PwSrjYONvkn3tXtySOSq+a14bG2gVJHwQG"
+        crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #map3d { width: 100%; height: 100%; background: #000; }
+    #token-banner {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 480px; padding: 24px 28px;
+      background: var(--panel); border: 1px solid var(--grid);
+      border-radius: 8px; color: var(--text);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      z-index: 999; font-size: 14px; line-height: 1.5;
+    }
+    #confirm-banner {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 460px; padding: 24px 28px;
+      background: var(--panel); border: 1px solid var(--grid);
+      border-radius: 8px; color: var(--text);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      z-index: 999;
+      text-align: left;
+    }
+    #confirm-banner strong { font-size: 15px; }
+    #confirm-banner button#confirm-load {
+      width: 100%;
+      background: var(--bike); color: #000; border: none;
+      padding: 10px 16px; border-radius: 5px;
+      font-weight: 700; font-size: 14px; cursor: pointer;
+    }
+    #confirm-banner button#confirm-load:hover { filter: brightness(1.1); }
+    #usage-readout {
+      margin: 12px 0;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--grid);
+      border-radius: 6px;
+      font-size: 12px;
+    }
+    .usage-row {
+      display: flex; justify-content: space-between;
+      padding: 2px 0;
+      font-variant-numeric: tabular-nums;
+    }
+    .usage-label { color: var(--muted); }
+    .usage-value { font-weight: 600; }
+    .usage-bar {
+      margin-top: 8px;
+      height: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 3px; overflow: hidden;
+    }
+    .usage-bar-fill {
+      height: 100%; background: var(--bike);
+      transition: width 0.3s ease;
+    }
+    .usage-warn {
+      margin-top: 8px; padding: 6px 8px;
+      background: rgba(239,68,68,0.15);
+      color: #ef4444;
+      border-radius: 4px;
+      font-size: 12px; font-weight: 600;
+    }
+    /* Usage ribbon (post-load corner widget) */
+    #usage-ribbon {
+      position: absolute; top: 12px; right: 12px;
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(17,26,46,0.92);
+      border: 1px solid var(--grid);
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 11px;
+      color: var(--text);
+      z-index: 6;
+      font-variant-numeric: tabular-nums;
+    }
+    .ribbon-label { color: var(--muted); }
+    .ribbon-value { font-weight: 600; }
+    .ribbon-link { color: var(--bike); text-decoration: none; }
+    .ribbon-link:hover { text-decoration: underline; }
+    #token-banner code {
+      display: block; margin-top: 8px; padding: 8px 10px;
+      background: var(--bg); border-radius: 4px;
+      font-size: 12px; color: var(--bike); word-break: break-all;
+    }
+    .pitch-controls {
+      position: absolute; bottom: 16px; left: 16px;
+      display: flex; gap: 6px; align-items: center;
+      background: rgba(17,26,46,0.92); border: 1px solid var(--grid);
+      padding: 8px 12px; border-radius: 6px; z-index: 5;
+      font-size: 12px; color: var(--text);
+    }
+    .pitch-controls input { width: 110px; accent-color: var(--bike); }
+    .pitch-controls label { color: var(--muted); }
+
+    /* Wind/Sim panel */
+    #wind-panel {
+      position: absolute; top: 12px; left: 12px;
+      width: 320px; max-height: calc(100vh - 80px);
+      background: rgba(17,26,46,0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--grid);
+      border-radius: 8px;
+      color: var(--text);
+      z-index: 6; overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+    #wind-panel.collapsed .wind-panel-body { display: none; }
+    .wind-panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--grid);
+      cursor: pointer;
+      user-select: none;
+    }
+    .wind-panel-header h3 {
+      margin: 0; font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .wind-panel-header .toggle { color: var(--muted); font-size: 14px; }
+    .wind-panel-body {
+      padding: 14px;
+      overflow-y: auto;
+    }
+    .wind-display {
+      display: flex; gap: 14px;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--grid);
+    }
+    .wind-display-text {
+      flex: 1;
+      display: flex; flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .wind-stat {
+      display: flex; justify-content: space-between;
+      align-items: baseline;
+    }
+    .wind-stat-label {
+      color: var(--muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .wind-stat-value {
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .slider-row {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+    .slider-row label {
+      width: 70px;
+      color: var(--muted);
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+    .slider-row input[type="range"] {
+      flex: 1; accent-color: var(--bike);
+    }
+    .slider-row .readout {
+      width: 60px; text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .sim-output {
+      margin-top: 14px;
+      padding: 12px;
+      background: rgba(249,115,22,0.08);
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 6px;
+    }
+    .sim-output-time {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--bike);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .sim-output-label {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sim-output-row {
+      display: flex; justify-content: space-between;
+      font-size: 11px;
+      margin-top: 6px;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }
+    .sim-output-row.delta-positive .delta { color: #ef4444; }
+    .sim-output-row.delta-negative .delta { color: #38bdf8; }
+
+    .panel-section {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--grid);
+    }
+    .panel-section-title {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .preset-buttons {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+    .preset-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--grid);
+      color: var(--text);
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.1s ease;
+    }
+    .preset-btn:hover { background: rgba(255,255,255,0.1); }
+    .preset-btn.active {
+      background: rgba(249,115,22,0.18);
+      border-color: var(--bike);
+      color: var(--bike);
+    }
+    .color-mode-toggle {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+    }
+    .color-mode-toggle .preset-btn { width: 100%; }
+
+    /* Color legend */
+    .color-legend {
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 6px;
+      border: 1px solid var(--grid);
+    }
+    .color-legend-title {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .legend-bar {
+      display: flex; height: 10px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+    .legend-bar-seg { flex: 1; }
+    .legend-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .legend-grid {
+      display: grid;
+      grid-template-columns: 12px 1fr auto;
+      gap: 5px 8px;
+      font-size: 11px;
+      align-items: center;
+    }
+    .legend-swatch {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+    .legend-grid .label { color: var(--text); }
+    .legend-grid .value {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .color-legend p {
+      margin: 6px 0 0;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Climbs panel (right side) */
+    #climbs-panel {
+      position: absolute; top: 56px; right: 12px;
+      width: 320px; max-height: calc(100vh - 220px);
+      background: rgba(17,26,46,0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--grid);
+      border-radius: 8px;
+      color: var(--text);
+      z-index: 6;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+    .climbs-panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--grid);
+      cursor: pointer; user-select: none;
+    }
+    .climbs-panel-header h3 {
+      margin: 0; font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .climbs-panel-header .toggle { color: var(--muted); font-size: 14px; }
+    #climbs-panel.collapsed .climbs-panel-body { display: none; }
+    .climbs-panel-body {
+      padding: 12px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    #climbs-3d-list {
+      display: flex; flex-direction: column;
+      gap: 6px;
+    }
+    .climb3d-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--grid);
+      border-radius: 6px;
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+    .climb3d-card:hover {
+      border-color: var(--climb, #fbbf24);
+      background: rgba(251,191,36,0.07);
+    }
+    .climb3d-card.active {
+      border-color: var(--climb, #fbbf24);
+      background: rgba(251,191,36,0.12);
+    }
+    .climb3d-head {
+      display: flex; gap: 8px; align-items: center; margin-bottom: 4px;
+    }
+    .climb3d-cat {
+      font-size: 10px; font-weight: 700;
+      padding: 2px 6px; border-radius: 3px;
+      background: rgba(251,191,36,0.18);
+      color: #fbbf24;
+      letter-spacing: 0.04em;
+    }
+    .climb3d-title {
+      font-size: 12px; font-weight: 500;
+      font-variant-numeric: tabular-nums;
+    }
+    .climb3d-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      font-size: 11px;
+    }
+    .climb3d-stats > div { text-align: center; }
+    .climb3d-stats .lbl {
+      color: var(--muted); font-size: 9px;
+      text-transform: uppercase; letter-spacing: 0.03em;
+    }
+    .climb3d-stats .val { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .climb3d-shape {
+      font-size: 10px; color: var(--muted);
+      font-style: italic; margin-top: 4px; line-height: 1.3;
+    }
+    .climb3d-wind {
+      display: flex; justify-content: space-between;
+      margin-top: 6px; padding-top: 6px;
+      border-top: 1px dashed var(--grid);
+      font-size: 10px;
+      font-variant-numeric: tabular-nums;
+    }
+    .climb3d-wind .wind-eff {
+      font-weight: 700;
+    }
+    .climb3d-wind.headwind .wind-eff { color: #ef4444; }
+    .climb3d-wind.tailwind .wind-eff { color: #38bdf8; }
+    .climb3d-wind.cross .wind-eff { color: #fbbf24; }
+    .scrubber-3d {
+      position: absolute; bottom: 16px; right: 16px;
+      width: 340px;
+      background: rgba(17,26,46,0.92);
+      border: 1px solid var(--grid);
+      border-radius: 6px;
+      padding: 10px 12px;
+      z-index: 5;
+      color: var(--text);
+    }
+    .scrubber-3d-head {
+      display: flex; gap: 8px; align-items: center;
+      margin-bottom: 6px; font-size: 12px;
+    }
+    .scrubber-3d-head select {
+      background: var(--bg); color: var(--text);
+      border: 1px solid var(--grid); border-radius: 4px;
+      padding: 2px 6px; font-size: 12px;
+    }
+    .scrubber-3d input[type="range"] {
+      width: 100%; accent-color: var(--bike);
+    }
+    .scrubber-3d-readout {
+      display: flex; justify-content: space-between;
+      font-size: 11px; color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      margin-top: 4px;
+    }
+    #fly-btn {
+      background: var(--bike); color: #000;
+      border: none; padding: 4px 10px;
+      border-radius: 4px; font-size: 12px; font-weight: 600;
+      cursor: pointer; margin-left: auto;
+    }
+    #fly-btn:hover { filter: brightness(1.1); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ironman Cairns — 3D View</h1>
+    <nav class="view-tabs">
+      <a class="view-tab" href="index.html">2D Map</a>
+      <a class="view-tab active" href="3d.html">3D View</a>
+    </nav>
+    <div class="header-controls">
+      <div class="discipline-toggles">
+        <label><input type="checkbox" data-discipline="swim" checked /> <span class="swatch swim"></span> Swim</label>
+        <label><input type="checkbox" data-discipline="bike" checked /> <span class="swatch bike"></span> Bike</label>
+        <label><input type="checkbox" data-discipline="run" checked /> <span class="swatch run"></span> Run</label>
+      </div>
+    </div>
+  </header>
+
+  <main style="position:relative; height: calc(100vh - 50px);">
+    <div id="map3d"></div>
+
+    <div id="wind-panel" hidden>
+      <div class="wind-panel-header" id="wind-panel-toggle">
+        <h3>Wind &amp; Race Simulator</h3>
+        <span class="toggle" id="wind-panel-chevron">▾</span>
+      </div>
+      <div class="wind-panel-body">
+        <div class="wind-display">
+          <canvas id="compass-dial"></canvas>
+          <div class="wind-display-text">
+            <div class="wind-stat">
+              <span class="wind-stat-label">Speed</span>
+              <span class="wind-stat-value" id="wind-speed-display">— km/h</span>
+            </div>
+            <div class="wind-stat">
+              <span class="wind-stat-label">From</span>
+              <span class="wind-stat-value" id="wind-dir-display">—</span>
+            </div>
+            <div class="wind-stat">
+              <span class="wind-stat-label">Air ρ</span>
+              <span class="wind-stat-value" id="rho-display">— kg/m³</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-row">
+          <label for="wind-speed-range">Wind</label>
+          <input type="range" id="wind-speed-range" min="0" max="50" step="0.5" />
+          <span class="readout" id="wind-speed-readout">— km/h</span>
+        </div>
+        <div class="slider-row">
+          <label for="wind-dir-range">From</label>
+          <input type="range" id="wind-dir-range" min="0" max="360" step="5" />
+          <span class="readout" id="wind-dir-readout">—°</span>
+        </div>
+        <div class="slider-row">
+          <label for="temp-range">Temp</label>
+          <input type="range" id="temp-range" min="10" max="40" step="0.5" />
+          <span class="readout" id="temp-readout">—°C</span>
+        </div>
+
+        <div class="panel-section">
+          <div class="panel-section-title">Scenario presets</div>
+          <div class="preset-buttons">
+            <button class="preset-btn" data-preset="median">Median</button>
+            <button class="preset-btn" data-preset="calm">Calm day</button>
+            <button class="preset-btn" data-preset="windy">Windy day</button>
+            <button class="preset-btn" data-preset="north-tail">Tail N</button>
+            <button class="preset-btn" data-preset="north-head">Head N</button>
+            <button class="preset-btn" data-preset="zero">No wind</button>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <div class="panel-section-title">Rider</div>
+          <div class="slider-row">
+            <label for="power-range">Power</label>
+            <input type="range" id="power-range" min="180" max="450" step="5" />
+            <span class="readout" id="power-readout">— W</span>
+          </div>
+          <div class="slider-row">
+            <label for="cda-range">CdA</label>
+            <input type="range" id="cda-range" min="0.18" max="0.32" step="0.002" />
+            <span class="readout" id="cda-readout">—</span>
+          </div>
+          <div class="slider-row">
+            <label for="mass-range">Mass</label>
+            <input type="range" id="mass-range" min="60" max="95" step="0.5" />
+            <span class="readout" id="mass-readout">— kg</span>
+          </div>
+        </div>
+
+        <div class="sim-output">
+          <div class="sim-output-label">Predicted bike split</div>
+          <div class="sim-output-time" id="sim-time">—:—:—</div>
+          <div class="sim-output-row" id="sim-baseline-row">
+            <span>vs no wind</span>
+            <span><span id="sim-baseline">—</span> <span class="delta" id="sim-delta">—</span></span>
+          </div>
+          <div class="sim-output-row">
+            <span>Avg speed</span>
+            <span id="sim-speed">— km/h</span>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <div class="panel-section-title">Route color</div>
+          <div class="color-mode-toggle">
+            <button class="preset-btn active" data-color-mode="default">Default</button>
+            <button class="preset-btn" data-color-mode="wind">Wind</button>
+            <button class="preset-btn" data-color-mode="climbs">Climbs</button>
+            <button class="preset-btn" data-color-mode="climbs-wind">Climbs+Wind</button>
+          </div>
+          <div id="color-legend" class="color-legend" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="climbs-panel" hidden>
+      <div class="climbs-panel-header" id="climbs-panel-toggle">
+        <h3 id="climbs-panel-title">Notable Climbs</h3>
+        <span class="toggle" id="climbs-panel-chevron">▾</span>
+      </div>
+      <div class="climbs-panel-body" id="climbs-panel-body">
+        <div id="climbs-3d-list">Loading…</div>
+      </div>
+    </div>
+
+    <div id="token-banner" hidden>
+      <strong>Mapbox token needed</strong>
+      <p>Get a free token at <a style="color:var(--bike)" href="https://account.mapbox.com/access-tokens/" target="_blank" rel="noopener">account.mapbox.com</a> and paste it into <code>web/config.local.js</code>:</p>
+      <code>window.MAPBOX_TOKEN = "pk.eyJ1Ij...";</code>
+      <p style="margin-top:10px; color: var(--muted); font-size: 12px;">Free tier = 50k loads/month, $5/1k overage.</p>
+    </div>
+
+    <div id="confirm-banner" hidden>
+      <strong>Load 3D map?</strong>
+      <p style="margin: 8px 0 12px; color: var(--muted); font-size: 13px;">
+        One click = one Mapbox map load. The session lasts 12 hours; pan/zoom/pitch within it is free.
+      </p>
+      <div id="usage-readout"></div>
+      <button id="confirm-load">Load map</button>
+      <label style="display: block; margin-top: 10px; font-size: 12px; color: var(--muted); cursor: pointer;">
+        <input type="checkbox" id="auto-load" /> Skip this confirmation for this tab session
+      </label>
+    </div>
+
+    <div class="pitch-controls" hidden id="pitch-controls">
+      <label for="pitch-range">Pitch</label>
+      <input type="range" id="pitch-range" min="0" max="80" value="60" />
+      <label for="bearing-range" style="margin-left: 10px">Bearing</label>
+      <input type="range" id="bearing-range" min="-180" max="180" value="0" />
+      <label for="exag-range" style="margin-left: 10px">Exag</label>
+      <input type="range" id="exag-range" min="1" max="3" step="0.1" value="1.5" />
+    </div>
+
+    <div class="scrubber-3d" hidden id="scrubber-3d">
+      <div class="scrubber-3d-head">
+        <select id="scrub-discipline-3d">
+          <option value="swim">Swim</option>
+          <option value="bike" selected>Bike</option>
+          <option value="run">Run</option>
+        </select>
+        <input type="range" id="scrub-range-3d" min="0" max="1000" value="0" style="flex:1; margin: 0 8px;" />
+        <button id="fly-btn">Fly to</button>
+      </div>
+      <div class="scrubber-3d-readout">
+        <span id="r3d-dist">— km</span>
+        <span id="r3d-alt">— m</span>
+        <span id="r3d-grade">— %</span>
+        <span id="r3d-bearing">— °</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script>
+    // Local-dev token override (gitignored). Only probed on localhost/file://
+    // so it never 404s on a deployed host (prod token lives in config.js).
+    if (location.protocol === "file:" ||
+        ["localhost", "127.0.0.1"].includes(location.hostname)) {
+      var s = document.createElement("script");
+      s.src = "config.local.js";
+      s.onerror = function () { /* file absent — leave token blank */ };
+      document.currentScript.parentNode.insertBefore(s, document.currentScript.nextSibling);
+    }
+  </script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"
+          integrity="sha384-TgDWG1CxH3UwM5IL34LqCZPI9N5Qnr+getwHh3tUdDD/e4ajSh35TmGG271bDtka"
+          crossorigin="anonymous"></script>
+  <script src="physics.js"></script>
+  <script src="wind.js"></script>
+  <script src="app3d.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "purpose": "Estimate Sam's effective 2025 race-day power from his observed bike split + actual weather",
+    "method": "Inverse bisection on power, holding CdA/mass/Crr at placeholders",
+    "next_step": "Compare estimated power vs measured TrainingPeaks power; adjust placeholders accordingly"
+  },
+  "ground_truth": {
+    "athlete": "Samuel Askey-Doran",
+    "race": "2025 IRONMAN Cairns",
+    "actual_bike_time_hms": "4:27:14",
+    "actual_bike_time_s": 16034,
+    "actual_bike_avg_kmh": 40.23
+  },
+  "weather_2025_actual": {
+    "wind_speed_kmh_10m_mean": 19.35,
+    "wind_direction_vector_mean_deg": 145.1,
+    "temp_c_race_window_mean": 21.61,
+    "humidity_pct_mean": 61.4,
+    "verdict_vs_historical_median": "windier by 1.9 km/h, cooler by 1.4 \u00b0C, otherwise typical"
+  },
+  "model_assumptions": {
+    "physics_version": "v2",
+    "mass_kg_placeholder": 75.0,
+    "crr_placeholder": 0.004,
+    "drivetrain_eff": 0.975,
+    "sitting_cda_mult": 1.6,
+    "aero_threshold_kmh": 19.31,
+    "wind_height_factor": 0.792
+  },
+  "estimated_effective_power_w_by_cda": {
+    "cda_0.258": 339.4,
+    "cda_0.248": 330.1,
+    "cda_0.238": 320.7,
+    "cda_0.228": 311.4
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "bike_course": {
+    "summary": {
+      "point_count": 3015,
+      "distance_m": 177574.44,
+      "distance_km": 177.574,
+      "elev_gain_m": 1330.0,
+      "elev_loss_m": 1334.1,
+      "min_alt_m": 5.0,
+      "max_alt_m": 57.77,
+      "bbox": {
+        "min_lat": -16.92164,
+        "min_lng": 145.46939,
+        "max_lat": -16.53852,
+        "max_lng": 145.7787
+      }
+    },
+    "file": "bike_course.json"
+  },
+  "run_course": {
+    "summary": {
+      "point_count": 1101,
+      "distance_m": 42910.01,
+      "distance_km": 42.91,
+      "elev_gain_m": 322.2,
+      "elev_loss_m": 323.5,
+      "min_alt_m": 1.29,
+      "max_alt_m": 11.5,
+      "bbox": {
+        "min_lat": -16.92498,
+        "min_lng": 145.75797,
+        "max_lat": -16.89704,
+        "max_lng": 145.78297
+      }
+    },
+    "file": "run_course.json"
+  },
+  "swim_course": {
+    "summary": {
+      "point_count": 45,
+      "distance_m": 3817.39,
+      "distance_km": 3.817,
+      "elev_gain_m": 10.6,
+      "elev_loss_m": 9.7,
+      "min_alt_m": 0.02,
+      "max_alt_m": 8.83,
+      "bbox": {
+        "min_lat": -16.75035,
+        "min_lng": 145.67128,
+        "max_lat": -16.74056,
+        "max_lng": 145.67457
+      }
+    },
+    "file": "swim_course.json"
+  }
+}

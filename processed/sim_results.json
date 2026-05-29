@@ -1,0 +1,200 @@
+{
+  "physics_version": "v2",
+  "course": "bike",
+  "weather_inputs": {
+    "wind_speed_kmh_10m": 17.504166666666666,
+    "wind_speed_kmh_rider_height": 13.86,
+    "wind_height_factor": 0.792,
+    "wind_from_deg": 140.03871550581562,
+    "temp_c": 22.991666666666667,
+    "humidity_pct": 65.79166666666666
+  },
+  "model_params": {
+    "aero_threshold_kmh": 19.31,
+    "sitting_cda_mult": 1.6,
+    "yaw_curve_a": 0.00055,
+    "yaw_curve_b": 0.005,
+    "corner_friction_mu": 0.45,
+    "corner_min_ms": 4.0
+  },
+  "scenarios": {
+    "2026_conservative": {
+      "label": "2026 conservative (IF 0.72, 271W)",
+      "power_w": 271,
+      "cda": 0.23,
+      "total_time_s": 17519.3,
+      "total_time_hms": "4:51:59",
+      "avg_speed_kmh": 36.49,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 94.0
+    },
+    "2026_target": {
+      "label": "2026 TARGET solo (IF 0.76, 286W)",
+      "power_w": 286,
+      "cda": 0.23,
+      "total_time_s": 17071.6,
+      "total_time_hms": "4:44:31",
+      "avg_speed_kmh": 37.45,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 94.4
+    },
+    "2026_aggressive": {
+      "label": "2026 aggressive (IF 0.78, 293W)",
+      "power_w": 293,
+      "cda": 0.23,
+      "total_time_s": 16872.0,
+      "total_time_hms": "4:41:12",
+      "avg_speed_kmh": 37.89,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 94.7
+    },
+    "2026_target_draft": {
+      "label": "2026 target + 20m drafting (~3%, CdA 0.2231)",
+      "power_w": 286,
+      "cda": 0.2231,
+      "total_time_s": 16920.9,
+      "total_time_hms": "4:42:00",
+      "avg_speed_kmh": 37.78,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 94.4
+    },
+    "2026_target_aero": {
+      "label": "2026 target + optimized aero (CdA 0.22)",
+      "power_w": 286,
+      "cda": 0.22,
+      "total_time_s": 16852.6,
+      "total_time_hms": "4:40:52",
+      "avg_speed_kmh": 37.93,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 94.5
+    },
+    "2026_target_calm": {
+      "label": "2026 target, calm day (5 km/h)",
+      "power_w": 286,
+      "cda": 0.23,
+      "total_time_s": 16324.7,
+      "total_time_hms": "4:32:04",
+      "avg_speed_kmh": 39.16,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 3.96,
+      "aero_pct": 95.1
+    },
+    "2026_target_windy": {
+      "label": "2026 target, windy day (28 km/h)",
+      "power_w": 286,
+      "cda": 0.23,
+      "total_time_s": 18176.6,
+      "total_time_hms": "5:02:56",
+      "avg_speed_kmh": 35.17,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 22.18,
+      "aero_pct": 94.0
+    },
+    "2026_target_mass_hi": {
+      "label": "2026 target, heavy (93kg)",
+      "power_w": 286,
+      "cda": 0.23,
+      "total_time_s": 17160.2,
+      "total_time_hms": "4:46:00",
+      "avg_speed_kmh": 37.25,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 94.2
+    },
+    "2026_target_mass_lo": {
+      "label": "2026 target, light (88kg)",
+      "power_w": 286,
+      "cda": 0.23,
+      "total_time_s": 16980.0,
+      "total_time_hms": "4:43:00",
+      "avg_speed_kmh": 37.65,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 94.7
+    },
+    "2026_target_rtc": {
+      "label": "Ride-the-course @ NP 286W",
+      "power_w": 286,
+      "cda": 0.23,
+      "mode": "variable_power_by_grade",
+      "base_power_w": 295.6,
+      "achieved_np_w": 285.8,
+      "total_time_s": 16891.1,
+      "total_time_hms": "4:41:31",
+      "avg_speed_kmh": 37.85,
+      "saved_vs_constant_s": 180.5,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 95.5
+    },
+    "2026_aggressive_rtc": {
+      "label": "Ride-the-course @ NP 293W",
+      "power_w": 293,
+      "cda": 0.23,
+      "mode": "variable_power_by_grade",
+      "base_power_w": 303.0,
+      "achieved_np_w": 292.9,
+      "total_time_s": 16696.1,
+      "total_time_hms": "4:38:16",
+      "avg_speed_kmh": 38.29,
+      "saved_vs_constant_s": 175.9,
+      "rho_kg_m3": 1.1837,
+      "effective_wind_kmh": 13.86,
+      "aero_pct": 95.9
+    }
+  },
+  "ride_the_course_grade_curve": [
+    [
+      -8,
+      28
+    ],
+    [
+      -5,
+      62
+    ],
+    [
+      -3,
+      78
+    ],
+    [
+      -1,
+      92
+    ],
+    [
+      1,
+      98
+    ],
+    [
+      3,
+      103
+    ],
+    [
+      5,
+      106
+    ],
+    [
+      7,
+      111
+    ],
+    [
+      10,
+      114
+    ]
+  ],
+  "inverse_targets": {
+    "4:00:00": 411.7,
+    "4:10:00": 376.7,
+    "4:20:00": 345.7,
+    "4:30:00": 318.9
+  },
+  "marginal_gains_s": {
+    "base_time_s": 17071.6,
+    "plus_5W_saves_s": 144.8,
+    "minus_0.005_cda_saves_s": 108.7
+  }
+}

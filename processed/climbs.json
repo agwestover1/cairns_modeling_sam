@@ -1,0 +1,626 @@
+{
+  "swim": [],
+  "bike": [
+    {
+      "start_idx": 109,
+      "end_idx": 117,
+      "start_km": 6.805,
+      "end_km": 7.261,
+      "length_m": 455.3,
+      "elev_gain_m": 18.0,
+      "start_alt_m": 13.0,
+      "peak_alt_m": 31.1,
+      "avg_grade_pct": 3.96,
+      "max_grade_pct": 7.04,
+      "start": {
+        "lat": -16.71015,
+        "lng": 145.63181
+      },
+      "peak": {
+        "lat": -16.70703,
+        "lng": 145.62913
+      },
+      "category": "4",
+      "bearing_std_deg": 9.0,
+      "bearing_total_turning_deg": 42.2,
+      "gain_thirds_pct": [
+        10.0,
+        54.0,
+        36.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "slightly curving \u00b7 middle-pinch",
+      "id": 1
+    },
+    {
+      "start_idx": 130,
+      "end_idx": 135,
+      "start_km": 7.975,
+      "end_km": 8.376,
+      "length_m": 401.0,
+      "elev_gain_m": 17.1,
+      "start_alt_m": 13.9,
+      "peak_alt_m": 31.0,
+      "avg_grade_pct": 4.26,
+      "max_grade_pct": 7.86,
+      "start": {
+        "lat": -16.703188,
+        "lng": 145.624078
+      },
+      "peak": {
+        "lat": -16.70071,
+        "lng": 145.62136
+      },
+      "category": "4",
+      "bearing_std_deg": 4.1,
+      "bearing_total_turning_deg": 10.1,
+      "gain_thirds_pct": [
+        23.0,
+        75.0,
+        2.0
+      ],
+      "false_plateaus": 1,
+      "shape_label": "straight \u00b7 middle-pinch \u00b7 1 false plateau",
+      "id": 2
+    },
+    {
+      "start_idx": 278,
+      "end_idx": 306,
+      "start_km": 17.365,
+      "end_km": 18.432,
+      "length_m": 1066.3,
+      "elev_gain_m": 45.2,
+      "start_alt_m": 11.8,
+      "peak_alt_m": 57.1,
+      "avg_grade_pct": 4.24,
+      "max_grade_pct": 7.06,
+      "start": {
+        "lat": -16.65522,
+        "lng": 145.56471
+      },
+      "peak": {
+        "lat": -16.64675,
+        "lng": 145.56521
+      },
+      "category": "3",
+      "bearing_std_deg": 26.8,
+      "bearing_total_turning_deg": 435.9,
+      "gain_thirds_pct": [
+        34.0,
+        29.0,
+        38.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 consistent grade",
+      "id": 3
+    },
+    {
+      "start_idx": 376,
+      "end_idx": 390,
+      "start_km": 21.521,
+      "end_km": 22.224,
+      "length_m": 703.4,
+      "elev_gain_m": 27.6,
+      "start_alt_m": 12.1,
+      "peak_alt_m": 39.7,
+      "avg_grade_pct": 3.93,
+      "max_grade_pct": 8.43,
+      "start": {
+        "lat": -16.62881,
+        "lng": 145.54837
+      },
+      "peak": {
+        "lat": -16.6232,
+        "lng": 145.54616
+      },
+      "category": "4",
+      "bearing_std_deg": 18.1,
+      "bearing_total_turning_deg": 186.8,
+      "gain_thirds_pct": [
+        52.0,
+        26.0,
+        22.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 front-loaded (steepest at start)",
+      "id": 4
+    },
+    {
+      "start_idx": 438,
+      "end_idx": 456,
+      "start_km": 24.903,
+      "end_km": 25.718,
+      "length_m": 814.5,
+      "elev_gain_m": 22.1,
+      "start_alt_m": 9.1,
+      "peak_alt_m": 31.3,
+      "avg_grade_pct": 2.72,
+      "max_grade_pct": 9.02,
+      "start": {
+        "lat": -16.6075,
+        "lng": 145.52852
+      },
+      "peak": {
+        "lat": -16.60211,
+        "lng": 145.52401
+      },
+      "category": "4",
+      "bearing_std_deg": 17.5,
+      "bearing_total_turning_deg": 155.4,
+      "gain_thirds_pct": [
+        46.0,
+        44.0,
+        10.0
+      ],
+      "false_plateaus": 1,
+      "shape_label": "winding \u00b7 front-loaded (steepest at start) \u00b7 1 false plateau",
+      "id": 5
+    },
+    {
+      "start_idx": 795,
+      "end_idx": 802,
+      "start_km": 48.526,
+      "end_km": 49.083,
+      "length_m": 557.0,
+      "elev_gain_m": 15.6,
+      "start_alt_m": 11.0,
+      "peak_alt_m": 26.6,
+      "avg_grade_pct": 2.81,
+      "max_grade_pct": 7.9,
+      "start": {
+        "lat": -16.58313,
+        "lng": 145.51276
+      },
+      "peak": {
+        "lat": -16.5880633,
+        "lng": 145.51351
+      },
+      "category": "4",
+      "bearing_std_deg": 5.0,
+      "bearing_total_turning_deg": 11.5,
+      "gain_thirds_pct": [
+        37.0,
+        15.0,
+        48.0
+      ],
+      "false_plateaus": 2,
+      "shape_label": "slightly curving \u00b7 back-loaded (steepest at top) \u00b7 2 false plateaus",
+      "id": 6
+    },
+    {
+      "start_idx": 877,
+      "end_idx": 893,
+      "start_km": 53.478,
+      "end_km": 54.197,
+      "length_m": 718.7,
+      "elev_gain_m": 26.7,
+      "start_alt_m": 10.0,
+      "peak_alt_m": 36.8,
+      "avg_grade_pct": 3.72,
+      "max_grade_pct": 7.1,
+      "start": {
+        "lat": -16.61643,
+        "lng": 145.53833
+      },
+      "peak": {
+        "lat": -16.62019,
+        "lng": 145.54324
+      },
+      "category": "4",
+      "bearing_std_deg": 20.3,
+      "bearing_total_turning_deg": 186.7,
+      "gain_thirds_pct": [
+        9.0,
+        54.0,
+        37.0
+      ],
+      "false_plateaus": 1,
+      "shape_label": "winding \u00b7 middle-pinch \u00b7 1 false plateau",
+      "id": 7
+    },
+    {
+      "start_idx": 922,
+      "end_idx": 937,
+      "start_km": 55.475,
+      "end_km": 56.034,
+      "length_m": 559.4,
+      "elev_gain_m": 24.7,
+      "start_alt_m": 12.5,
+      "peak_alt_m": 37.2,
+      "avg_grade_pct": 4.41,
+      "max_grade_pct": 9.1,
+      "start": {
+        "lat": -16.62937,
+        "lng": 145.549
+      },
+      "peak": {
+        "lat": -16.63108,
+        "lng": 145.55213
+      },
+      "category": "4",
+      "bearing_std_deg": 48.1,
+      "bearing_total_turning_deg": 271.2,
+      "gain_thirds_pct": [
+        54.0,
+        20.0,
+        26.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 front-loaded (steepest at start)",
+      "id": 8
+    },
+    {
+      "start_idx": 973,
+      "end_idx": 989,
+      "start_km": 57.735,
+      "end_km": 58.47,
+      "length_m": 735.4,
+      "elev_gain_m": 36.3,
+      "start_alt_m": 20.8,
+      "peak_alt_m": 57.1,
+      "avg_grade_pct": 4.94,
+      "max_grade_pct": 10.88,
+      "start": {
+        "lat": -16.64095,
+        "lng": 145.5627
+      },
+      "peak": {
+        "lat": -16.64675,
+        "lng": 145.56521
+      },
+      "category": "3",
+      "bearing_std_deg": 17.5,
+      "bearing_total_turning_deg": 130.2,
+      "gain_thirds_pct": [
+        32.0,
+        47.0,
+        21.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 middle-pinch",
+      "id": 9
+    },
+    {
+      "start_idx": 1169,
+      "end_idx": 1178,
+      "start_km": 69.126,
+      "end_km": 69.591,
+      "length_m": 465.4,
+      "elev_gain_m": 18.1,
+      "start_alt_m": 12.8,
+      "peak_alt_m": 30.9,
+      "avg_grade_pct": 3.88,
+      "max_grade_pct": 11.29,
+      "start": {
+        "lat": -16.70434,
+        "lng": 145.62523
+      },
+      "peak": {
+        "lat": -16.70654,
+        "lng": 145.6287
+      },
+      "category": "4",
+      "bearing_std_deg": 16.4,
+      "bearing_total_turning_deg": 93.3,
+      "gain_thirds_pct": [
+        11.0,
+        67.0,
+        23.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 middle-pinch",
+      "id": 10
+    },
+    {
+      "start_idx": 1341,
+      "end_idx": 1349,
+      "start_km": 79.702,
+      "end_km": 80.157,
+      "length_m": 455.3,
+      "elev_gain_m": 18.0,
+      "start_alt_m": 13.0,
+      "peak_alt_m": 31.1,
+      "avg_grade_pct": 3.96,
+      "max_grade_pct": 7.04,
+      "start": {
+        "lat": -16.71015,
+        "lng": 145.63181
+      },
+      "peak": {
+        "lat": -16.70703,
+        "lng": 145.62913
+      },
+      "category": "4",
+      "bearing_std_deg": 9.0,
+      "bearing_total_turning_deg": 42.2,
+      "gain_thirds_pct": [
+        10.0,
+        54.0,
+        36.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "slightly curving \u00b7 middle-pinch",
+      "id": 11
+    },
+    {
+      "start_idx": 1362,
+      "end_idx": 1367,
+      "start_km": 80.872,
+      "end_km": 81.273,
+      "length_m": 401.0,
+      "elev_gain_m": 17.1,
+      "start_alt_m": 13.9,
+      "peak_alt_m": 31.0,
+      "avg_grade_pct": 4.26,
+      "max_grade_pct": 7.86,
+      "start": {
+        "lat": -16.703188,
+        "lng": 145.624078
+      },
+      "peak": {
+        "lat": -16.70071,
+        "lng": 145.62136
+      },
+      "category": "4",
+      "bearing_std_deg": 4.1,
+      "bearing_total_turning_deg": 10.1,
+      "gain_thirds_pct": [
+        23.0,
+        75.0,
+        2.0
+      ],
+      "false_plateaus": 1,
+      "shape_label": "straight \u00b7 middle-pinch \u00b7 1 false plateau",
+      "id": 12
+    },
+    {
+      "start_idx": 1510,
+      "end_idx": 1538,
+      "start_km": 90.263,
+      "end_km": 91.329,
+      "length_m": 1066.3,
+      "elev_gain_m": 45.2,
+      "start_alt_m": 11.8,
+      "peak_alt_m": 57.1,
+      "avg_grade_pct": 4.24,
+      "max_grade_pct": 7.06,
+      "start": {
+        "lat": -16.65522,
+        "lng": 145.56471
+      },
+      "peak": {
+        "lat": -16.64675,
+        "lng": 145.56521
+      },
+      "category": "3",
+      "bearing_std_deg": 26.8,
+      "bearing_total_turning_deg": 435.9,
+      "gain_thirds_pct": [
+        34.0,
+        29.0,
+        38.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 consistent grade",
+      "id": 13
+    },
+    {
+      "start_idx": 1608,
+      "end_idx": 1622,
+      "start_km": 94.418,
+      "end_km": 95.121,
+      "length_m": 703.4,
+      "elev_gain_m": 27.6,
+      "start_alt_m": 12.1,
+      "peak_alt_m": 39.7,
+      "avg_grade_pct": 3.93,
+      "max_grade_pct": 8.43,
+      "start": {
+        "lat": -16.62881,
+        "lng": 145.54837
+      },
+      "peak": {
+        "lat": -16.6232,
+        "lng": 145.54616
+      },
+      "category": "4",
+      "bearing_std_deg": 18.1,
+      "bearing_total_turning_deg": 186.8,
+      "gain_thirds_pct": [
+        52.0,
+        26.0,
+        22.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 front-loaded (steepest at start)",
+      "id": 14
+    },
+    {
+      "start_idx": 1670,
+      "end_idx": 1688,
+      "start_km": 97.8,
+      "end_km": 98.615,
+      "length_m": 814.6,
+      "elev_gain_m": 22.1,
+      "start_alt_m": 9.1,
+      "peak_alt_m": 31.3,
+      "avg_grade_pct": 2.72,
+      "max_grade_pct": 9.02,
+      "start": {
+        "lat": -16.6075,
+        "lng": 145.52852
+      },
+      "peak": {
+        "lat": -16.60211,
+        "lng": 145.52401
+      },
+      "category": "4",
+      "bearing_std_deg": 17.5,
+      "bearing_total_turning_deg": 155.4,
+      "gain_thirds_pct": [
+        46.0,
+        44.0,
+        10.0
+      ],
+      "false_plateaus": 1,
+      "shape_label": "winding \u00b7 front-loaded (steepest at start) \u00b7 1 false plateau",
+      "id": 15
+    },
+    {
+      "start_idx": 2027,
+      "end_idx": 2034,
+      "start_km": 121.41,
+      "end_km": 121.967,
+      "length_m": 557.0,
+      "elev_gain_m": 15.6,
+      "start_alt_m": 11.0,
+      "peak_alt_m": 26.6,
+      "avg_grade_pct": 2.81,
+      "max_grade_pct": 7.9,
+      "start": {
+        "lat": -16.58313,
+        "lng": 145.51276
+      },
+      "peak": {
+        "lat": -16.5880633,
+        "lng": 145.51351
+      },
+      "category": "4",
+      "bearing_std_deg": 5.0,
+      "bearing_total_turning_deg": 11.5,
+      "gain_thirds_pct": [
+        37.0,
+        14.0,
+        49.0
+      ],
+      "false_plateaus": 2,
+      "shape_label": "slightly curving \u00b7 back-loaded (steepest at top) \u00b7 2 false plateaus",
+      "id": 16
+    },
+    {
+      "start_idx": 2109,
+      "end_idx": 2125,
+      "start_km": 126.361,
+      "end_km": 127.08,
+      "length_m": 718.7,
+      "elev_gain_m": 26.8,
+      "start_alt_m": 10.0,
+      "peak_alt_m": 36.8,
+      "avg_grade_pct": 3.73,
+      "max_grade_pct": 7.1,
+      "start": {
+        "lat": -16.61643,
+        "lng": 145.53833
+      },
+      "peak": {
+        "lat": -16.62019,
+        "lng": 145.54324
+      },
+      "category": "4",
+      "bearing_std_deg": 20.3,
+      "bearing_total_turning_deg": 186.7,
+      "gain_thirds_pct": [
+        9.0,
+        54.0,
+        37.0
+      ],
+      "false_plateaus": 1,
+      "shape_label": "winding \u00b7 middle-pinch \u00b7 1 false plateau",
+      "id": 17
+    },
+    {
+      "start_idx": 2154,
+      "end_idx": 2169,
+      "start_km": 128.358,
+      "end_km": 128.917,
+      "length_m": 559.4,
+      "elev_gain_m": 24.7,
+      "start_alt_m": 12.5,
+      "peak_alt_m": 37.2,
+      "avg_grade_pct": 4.41,
+      "max_grade_pct": 9.1,
+      "start": {
+        "lat": -16.62937,
+        "lng": 145.549
+      },
+      "peak": {
+        "lat": -16.63108,
+        "lng": 145.55213
+      },
+      "category": "4",
+      "bearing_std_deg": 48.1,
+      "bearing_total_turning_deg": 271.2,
+      "gain_thirds_pct": [
+        54.0,
+        20.0,
+        26.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 front-loaded (steepest at start)",
+      "id": 18
+    },
+    {
+      "start_idx": 2205,
+      "end_idx": 2221,
+      "start_km": 130.618,
+      "end_km": 131.353,
+      "length_m": 735.4,
+      "elev_gain_m": 36.3,
+      "start_alt_m": 20.7,
+      "peak_alt_m": 57.0,
+      "avg_grade_pct": 4.93,
+      "max_grade_pct": 10.88,
+      "start": {
+        "lat": -16.64095,
+        "lng": 145.5627
+      },
+      "peak": {
+        "lat": -16.64675,
+        "lng": 145.56521
+      },
+      "category": "3",
+      "bearing_std_deg": 17.5,
+      "bearing_total_turning_deg": 130.2,
+      "gain_thirds_pct": [
+        32.0,
+        47.0,
+        21.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 middle-pinch",
+      "id": 19
+    },
+    {
+      "start_idx": 2401,
+      "end_idx": 2410,
+      "start_km": 142.008,
+      "end_km": 142.474,
+      "length_m": 465.4,
+      "elev_gain_m": 18.1,
+      "start_alt_m": 12.8,
+      "peak_alt_m": 30.9,
+      "avg_grade_pct": 3.88,
+      "max_grade_pct": 10.49,
+      "start": {
+        "lat": -16.70434,
+        "lng": 145.62523
+      },
+      "peak": {
+        "lat": -16.70654,
+        "lng": 145.6287
+      },
+      "category": "4",
+      "bearing_std_deg": 16.4,
+      "bearing_total_turning_deg": 93.3,
+      "gain_thirds_pct": [
+        11.0,
+        67.0,
+        23.0
+      ],
+      "false_plateaus": 0,
+      "shape_label": "winding \u00b7 middle-pinch",
+      "id": 20
+    }
+  ],
+  "run": []
+}
